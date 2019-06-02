@@ -43,7 +43,6 @@ function openEvent() {
 	if(this.id!="home"&&this.id!="contact")
 	{
 		registerContent = "register-content-"+this.id;
-		console.log(registerContent);
 		document.getElementById(registerContent).style.opacity = 0;
 	}
 	next_content = this.id+"-content";
@@ -162,13 +161,6 @@ function closeRegister(h) {
 	h.preventDefault();
 }
 
-// document.getElementById('online-form-tab').addEventListener('click', function() {
-// 	changeRocktavesForm(this.id);
-// })
-// document.getElementById('offline-form-tab').addEventListener('click', function() {
-// 	changeRocktavesForm(this.id);
-// })
-
 function changeRoctavesForm(tabID) {
 	if(tabID == "online-form-tab") {
 		document.getElementById('myFormRocktavesOffline').style.opacity = 0;
@@ -195,20 +187,41 @@ function changeRoctavesForm(tabID) {
 	}
 }
 
+function selectRegion(region) {
+	if(region) {
+		document.getElementById('west-region').style.display = 'none';
+		document.getElementById('north-east-region').style.display = 'none';
+		document.getElementById('south-west-region').style.display = 'none';
+		document.getElementById('south-east-region').style.display = 'none';
+
+		if(region != 'Select')
+			document.getElementById(region + '-region').style.display = 'block';
+	}
+}
+
+selectRegion(document.getElementById('register-region-ro').value);
+
+
+
+//----------------------------------------ajax request---------------------------------------
+
 document.getElementById("myFormRocktavesOnline").onsubmit = function registerForm(e)
 {
 	name = document.getElementById("register-name-ro").value;
 	genre = document.getElementById("register-genre-ro").value;
-	contact = document.getElementById("register-contact-ro").value;
+	contact1 = document.getElementById("register-contact-ro-1").value;
+	contact2 = document.getElementById("register-contact-ro-2").value;
 	email = document.getElementById("register-email-ro").value;
 	members = document.getElementById("register-members-ro").value;
-	elemLocation = document.getElementById("register-location-ro").value;
+	region = document.getElementById("register-region-ro").value;
+	state = document.getElementById('west-region').value || document.getElementById('north-east-region').value || document.getElementById('south-west-region').value || document.getElementById('south-east-region').value
+	city = document.getElementById('register-city-ro').value;
 	entry1 = document.getElementById("register-entry1-ro").value;
 	entry2 = document.getElementById("register-entry2-ro").value;
 	entries = document.getElementById("register-entries-ro").value;
-	if(name!="" && genre!="" && contact!="" && email!="" && members!="" && elemLocation!="" && entry1!="" && entry2!="")
+	if(name!="" && genre!="" && contact1!="" && contact2!="" && email!="" && members!="" && region!="" && state!="" && entry1!="" && entry2!="")
 	{
-		URL = "https://bits-oasis.org/2018/preregistration/";
+		URL = "https://bits-oasis.org/preregistrations/RoctavesOnlineReg/";
 		$.ajax({
 			type:'POST',
 			contentType: 'application/json',
@@ -217,10 +230,13 @@ document.getElementById("myFormRocktavesOnline").onsubmit = function registerFor
 			data:JSON.stringify({
 				name: name,
 				genre: genre,
-				phone: contact,
+				phone1: contact1,
+				phone2: contact2,
 				email_address: email,
-				number_of_participants: members,
-				elimination_preference: elemLocation,
+				number_of_members: members,
+				region: region,
+				state: state,
+				city: city,
 				entry1: entry1,
 				entry2: entry2,
 				enteries: entries
@@ -250,13 +266,14 @@ document.getElementById("myFormRocktavesOffline").onsubmit = function registerFo
 {
 	name = document.getElementById("off-register-name-ro").value;
 	genre = document.getElementById("off-register-genre-ro").value;
-	contact = document.getElementById("off-register-contact-ro").value;
+	contact1 = document.getElementById("off-register-contact-ro-1").value;
+	contact2 = document.getElementById("off-register-contact-ro-2").value;
 	email = document.getElementById("off-register-email-ro").value;
 	members = document.getElementById("off-register-members-ro").value;
 	elemLocation = document.getElementById("off-register-location-ro").value;
-	if(name!="" && genre!="" && contact!="" && email!="" && members!="" && elemLocation!="")
+	if(name!="" && genre!="" && contact1!="" && contact2!="" && email!="" && members!="" && elemLocation!="")
 	{
-		URL = "https://bits-oasis.org/2018/preregistration/";
+		URL = "https://bits-oasis.org/preregistrations/RoctavesOfflineReg/";
 		$.ajax({
 			type:'POST',
 			contentType: 'application/json',
@@ -265,13 +282,11 @@ document.getElementById("myFormRocktavesOffline").onsubmit = function registerFo
 			data:JSON.stringify({
 				name: name,
 				genre: genre,
-				phone: contact,
+				phone1: contact1,
+				phone2: contact2,
 				email_address: email,
-				number_of_participants: members,
-				elimination_preference: elemLocation,
-				entry1: entry1,
-				entry2: entry2,
-				enteries: entries
+				number_of_members: members,
+				city: elemLocation
 			}),
 			dataType: "json",
 			error:function(xhr,textstatus,err){
@@ -414,7 +429,6 @@ document.getElementById("myFormStandup").onsubmit = function registerForm(h)
 				document.getElementById("register-overlay").style.display = "flex";
 				document.getElementById("register-message").style.display = "flex";
         document.getElementById("register-message-span").innerHTML = "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
-        console.log(err);
 			}
 		}).done(function(response){
 			document.getElementById("register-overlay").style.display = "flex";

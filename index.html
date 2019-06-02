@@ -110,39 +110,54 @@
 				</div>
 				<div id="register-form">
 					<form id="myFormRocktavesOnline">
-						<input type="text" name="name" placeholder="Name of band" id="register-name-ro" /><br>
-						<input type="text" name="genre" placeholder="Genre" id="register-genre-ro" /><br>
-						<input type="number" name="contact" placeholder="Contact number" id="register-contact-ro" /><br>
-						<input type="email" name="email" placeholder="E-mail id" id="register-email-ro"><br>
-						<input type="number" name="members" placeholder="No. of band members" id="register-members-ro" min="1"><br>
+						<input required type="text" name="name" placeholder="Name of band" id="register-name-ro" /><br>
+						<input required type="text" name="genre" placeholder="Genre" id="register-genre-ro" /><br>
+						<input required type="number" name="contact-1" placeholder="Contact number" id="register-contact-ro-1" /><br>
+						<input required type="number" name="contact-2" placeholder="Alternate Contact number" id="register-contact-ro-2" /><br>
+						<input required type="email" name="email" placeholder="E-mail id" id="register-email-ro"><br>
+						<input required type="number" name="members" placeholder="No. of band members" id="register-members-ro" min="1"><br>
 						<label>Elimination round region & states:</label><br>
-						<select id="register-location-ro">
+						<select id="register-region-ro">
 							<option selected>Select</option>
+							<option value="west" onclick="selectRegion(this.value)">West</option>
+							<option value="north-east" onclick="selectRegion(this.value)">North East</option>
+							<option value="south-west" onclick="selectRegion(this.value)">South West</option>
+							<option value="south-east" onclick="selectRegion(this.value)">South East</option>
+						</select>
+						<select id="west-region">
 							<option value="maharastra">Maharastra</option>
 							<option value="goa">Goa</option>
 							<option value="gujrat">Gujrat</option>
+						</select>
+						<select id="north-east-region">
 							<option value="assam">Assam</option>
 							<option value="meghalaya">Meghalaya</option>
+						</select>
+						<select id="south-west-region">
 							<option value="karnataka">Karnataka</option>
 							<option value="kerela">Kerela</option>
 							<option value="tamil-nadu">Tamil Nadu</option>
+						</select>
+						<select id="south-east-region">
 							<option value="andhra-pradesh">Andhra Pradesh</option>
 							<option value="telangana">Telangana</option>
-						</select><br><br>
+						</select><br>
+						<input required type="text" name="city" placeholder="City" id="register-city-ro" /><br>
 							<label>Entries:*</label><br>
-						<input type="text" name="entry1" placeholder="Entry 1" id="register-entry1-ro"><br>
-						<input type="text" name="entry2" placeholder="Entry 2" id="register-entry2-ro"><br>
+						<input required type="text" name="entry1" placeholder="Entry 1" id="register-entry1-ro"><br>
+						<input required type="text" name="entry2" placeholder="Entry 2" id="register-entry2-ro"><br>
 						<input type="text" name="entries" placeholder="More entries" class="more-entries" id="register-entries-ro"/>
 						<!-- <p style="letter-spacing: 0.5px;">Deadline for registering through online entries for Guwahati, Kathmandu, Kolkata, Chennai, Kochi is 11<sup>th</sup> August. Shortlisting for Delhi, Mumbai and Bangalore will go as planned earlier through elimination rounds which would be held in respective cities, deadline for registration for which is 11th June.<br>
             			**PLEASE PROVIDE YOUTUBE/ SOUNDCLOUD/ BANDCAMP/ GOOGLE DRIVE/ DROPBOX LINKS TO ATLEAST TWO ORIGINAL ENTRIES AND ATLEAST ONE LINK TO LIVE PERFORMANCE. IN CASE OF AUDIO/ VIDEO RECORDINGS, KINDLY MAIL THE SAME TO <i>ARBITS@BITS-OASIS.ORG</i></p> -->
 						<center><button type="submit" id="register-submit">Submit</button></center>
 					</form>
 					<form id="myFormRocktavesOffline">
-						<input type="text" name="name" placeholder="Name of band" id="off-register-name-ro" /><br>
-						<input type="text" name="genre" placeholder="Genre" id="off-register-genre-ro" /><br>
-						<input type="number" name="contact" placeholder="Contact number" id="off-register-contact-ro" /><br>
-						<input type="email" name="email" placeholder="E-mail id" id="off-register-email-ro"><br>
-						<input type="number" name="members" placeholder="No. of band members" id="off-register-members-ro" min="1"><br>
+						<input required type="text" name="name" placeholder="Name of band" id="off-register-name-ro" /><br>
+						<input required type="text" name="genre" placeholder="Genre" id="off-register-genre-ro" /><br>
+						<input required type="number" name="contact" placeholder="Contact number" id="off-register-contact-ro-1" /><br>
+						<input required type="number" name="contact" placeholder="Alternate Contact number" id="off-register-contact-ro-2" /><br>
+						<input required type="email" name="email" placeholder="E-mail id" id="off-register-email-ro"><br>
+						<input required type="number" name="members" placeholder="No. of band members" id="off-register-members-ro" min="1"><br>
 						<label>Elimination round cities:</label><br>
 						<select id="off-register-location-ro">
 							<option selected>Select</option>
