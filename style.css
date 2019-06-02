@@ -306,6 +306,27 @@ html, body {
 	overflow: auto;
     justify-content: space-between;
 }
+.types-of-form {
+	width: 40%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2%;
+}
+.types-of-form > span {
+	width: 50%;
+	font-size: 1.5em;
+	color: #555555;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+}
+.types-of-form > span:nth-of-type(1) {
+	border-right: 1px solid #cccccc;
+	text-decoration: underline;
+}
+.types-of-form > span:nth-of-type(2) {
+	border-left: 1px solid #cccccc;
+}
 #register-form {
 	width: 40%;
 	text-align: left;
@@ -315,6 +336,14 @@ html, body {
 	margin-top: 5%;
 	text-align: center;
 	justify-content: center;
+}
+#myFormRocktavesOnline {
+	display: none;
+	opacity: 0;
+	transition: 0.5s;
+}
+#myFormRocktavesOffline {
+	transition: 0.5s;
 }
 #register-form input {
 	font-family: BebasNeue;
@@ -402,6 +431,13 @@ html, body {
 		width: 80vw;
 		font-size: 1.2em;
 		text-align: center;
+	}
+	.types-of-form {
+		width: 70%;
+	}
+	.types-of-form > span {
+		width: 50%;
+		font-size: 1.2em;
 	}
 }
 @media all and (max-width: 450px) {

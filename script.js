@@ -81,20 +81,24 @@ function fadeIn(id) {
 		100);
 }
 function fadeInRegister(id) {
-	if (id == "standup") {
-    		document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations closed for standup soapbox</span>';
-	}else if (id == "purpleprose") {
-		document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations closed for purple prose</span>';
-	}
-	 else {
-		document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations closed for ' + id + '</span>';
-	}
+	// if (id == "standup") {
+  //   		document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations closed for standup soapbox</span>';
+	// }else if (id == "purpleprose") {
+	// 	document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations closed for purple prose</span>';
+	// }
+	//  else {
+	// 	document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations closed for ' + id + '</span>';
+	// }
+
+	document.getElementById("register-bottom").innerHTML = '<span id="' + id + '-register" style="cursor: pointer" class="register-for">Register</span>';
+
 	document.getElementById("register-bottom").style.display = "flex";
 	setTimeout(
 		function(){
       document.getElementById("register-bottom").style.opacity = 1;
       if (!document.getElementById(id+"-register").classList.contains("reg-closed")) {
-        document.getElementById(id+"-register").addEventListener("click", function() {register(id);});
+				if(id == "rocktaves")
+        	document.getElementById(id+"-register").addEventListener("click", function() {register(id);});
       }
   }, 
 		100);
@@ -124,9 +128,11 @@ function register(id) {
 			document.getElementsByClassName("register-for-head")[i].innerHTML = "Register for " + id;
 		}	
 	}
-	setTimeout(
-		function(){document.getElementById(id+"-register").style.display = "none"; 
-					document.getElementById(registerContent).style.display = "flex";document.getElementById(registerContent).style.opacity = 1;}, 
+	setTimeout( function(){
+			document.getElementById(id+"-register").style.display = "none"; 
+			document.getElementById(registerContent).style.display = "flex";
+			document.getElementById(registerContent).style.opacity = 1;
+		}, 
 		transition_time);
 }
 
@@ -156,7 +162,40 @@ function closeRegister(h) {
 	h.preventDefault();
 }
 
-document.getElementById("myFormRocktaves").onsubmit = function registerForm(e)
+// document.getElementById('online-form-tab').addEventListener('click', function() {
+// 	changeRocktavesForm(this.id);
+// })
+// document.getElementById('offline-form-tab').addEventListener('click', function() {
+// 	changeRocktavesForm(this.id);
+// })
+
+function changeRoctavesForm(tabID) {
+	if(tabID == "online-form-tab") {
+		document.getElementById('myFormRocktavesOffline').style.opacity = 0;
+		setTimeout(function() {
+			document.getElementById('myFormRocktavesOffline').style.display = "none";
+			document.getElementById('myFormRocktavesOnline').style.display = "initial";
+			setTimeout(function() {
+				document.getElementById('myFormRocktavesOnline').style.opacity = 1;
+				document.getElementById('online-form-tab').style.textDecoration = "underline";
+			}, 10);
+		}, transition_time);
+		document.getElementById('offline-form-tab').style.textDecoration = "none";
+	} else {
+		document.getElementById('myFormRocktavesOnline').style.opacity = 0;
+		setTimeout(function() {
+			document.getElementById('myFormRocktavesOnline').style.display = "none";
+			document.getElementById('myFormRocktavesOffline').style.display = "block";
+			setTimeout(function() {
+				document.getElementById('myFormRocktavesOffline').style.opacity = 1;
+				document.getElementById('offline-form-tab').style.textDecoration = "underline";
+			}, 10);
+		}, transition_time);
+		document.getElementById('online-form-tab').style.textDecoration = "none";
+	}
+}
+
+document.getElementById("myFormRocktavesOnline").onsubmit = function registerForm(e)
 {
 	name = document.getElementById("register-name-ro").value;
 	genre = document.getElementById("register-genre-ro").value;
@@ -168,6 +207,54 @@ document.getElementById("myFormRocktaves").onsubmit = function registerForm(e)
 	entry2 = document.getElementById("register-entry2-ro").value;
 	entries = document.getElementById("register-entries-ro").value;
 	if(name!="" && genre!="" && contact!="" && email!="" && members!="" && elemLocation!="" && entry1!="" && entry2!="")
+	{
+		URL = "https://bits-oasis.org/2018/preregistration/";
+		$.ajax({
+			type:'POST',
+			contentType: 'application/json',
+			// headers: { 'x-my-custom-header': 'some value' },
+			url: URL,
+			data:JSON.stringify({
+				name: name,
+				genre: genre,
+				phone: contact,
+				email_address: email,
+				number_of_participants: members,
+				elimination_preference: elemLocation,
+				entry1: entry1,
+				entry2: entry2,
+				enteries: entries
+			}),
+			dataType: "json",
+			error:function(xhr,textstatus,err){
+				document.getElementById("register-overlay").style.display = "flex";
+				document.getElementById("register-message").style.display = "flex";
+				document.getElementById("register-message-span").innerHTML = "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
+			}
+		}).done(function(response){
+			document.getElementById("register-overlay").style.display = "flex";
+			document.getElementById("register-message").style.display = "flex";
+			document.getElementById("register-message-span").innerHTML = response.message;
+		});
+	}
+	else
+	{
+		document.getElementById("register-overlay").style.display = "flex";
+		document.getElementById("register-message-span").innerHTML = "Please fill all the required fields.";
+		document.getElementById("register-message").style.display = "flex";		
+	}
+	e.preventDefault();
+}
+
+document.getElementById("myFormRocktavesOffline").onsubmit = function registerForm(e)
+{
+	name = document.getElementById("off-register-name-ro").value;
+	genre = document.getElementById("off-register-genre-ro").value;
+	contact = document.getElementById("off-register-contact-ro").value;
+	email = document.getElementById("off-register-email-ro").value;
+	members = document.getElementById("off-register-members-ro").value;
+	elemLocation = document.getElementById("off-register-location-ro").value;
+	if(name!="" && genre!="" && contact!="" && email!="" && members!="" && elemLocation!="")
 	{
 		URL = "https://bits-oasis.org/2018/preregistration/";
 		$.ajax({
