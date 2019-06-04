@@ -195,7 +195,7 @@ function selectRegion(region) {
 		document.getElementById('south-east-region').style.display = 'none';
 
 		if(region != 'Select')
-			document.getElementById(region + '-region').style.display = 'block';
+			document.getElementById(region + '-region').style.display = 'inline';
 	}
 }
 
