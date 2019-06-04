@@ -109,9 +109,11 @@
 			<div id="register-content-rocktaves">
 				<h1 class="register-for-head"></h1>
 				<div class="types-of-form">
-					<span id="offline-form-tab" onclick="changeRoctavesForm(this.id)">Offline Form</span>
-					<span id="online-form-tab" onclick="changeRoctavesForm(this.id)">Online Form</span>
+					<span id="offline-form-tab" onclick="changeRoctavesForm(this.id)">Physical Elims</span>
+					<span id="online-form-tab" onclick="changeRoctavesForm(this.id)">Online Elims</span>
 				</div>
+
+				<p style="letter-spacing: 0.5px; color: red">**If you've registered for Online Elims, you cannot participate in Physical Elims</p>
 				<div id="register-form">
 					<form id="myFormRocktavesOnline">
 						<input required type="text" name="name" placeholder="Name of band" id="register-name-ro" /><br>
@@ -149,13 +151,10 @@
 							<option value="andhra-pradesh">Andhra Pradesh</option>
 							<option value="telangana">Telangana</option>
 						</select><br>
-						<input required type="text" name="city" placeholder="City" id="register-city-ro" /><br>
 							<label>Entries:*</label><br>
 						<input required type="text" name="entry1" placeholder="Entry 1" id="register-entry1-ro"><br>
 						<input required type="text" name="entry2" placeholder="Entry 2" id="register-entry2-ro"><br>
 						<input type="text" name="entries" placeholder="More entries" class="more-entries" id="register-entries-ro"/>
-						<!-- <p style="letter-spacing: 0.5px;">Deadline for registering through online entries for Guwahati, Kathmandu, Kolkata, Chennai, Kochi is 11<sup>th</sup> August. Shortlisting for Delhi, Mumbai and Bangalore will go as planned earlier through elimination rounds which would be held in respective cities, deadline for registration for which is 11th June.<br>
-            			**PLEASE PROVIDE YOUTUBE/ SOUNDCLOUD/ BANDCAMP/ GOOGLE DRIVE/ DROPBOX LINKS TO ATLEAST TWO ORIGINAL ENTRIES AND ATLEAST ONE LINK TO LIVE PERFORMANCE. IN CASE OF AUDIO/ VIDEO RECORDINGS, KINDLY MAIL THE SAME TO <i>ARBITS@BITS-OASIS.ORG</i></p> -->
 						<center><button type="submit" id="register-submit">Submit</button></center>
 					</form>
 					<form id="myFormRocktavesOffline">

@@ -214,7 +214,6 @@ document.getElementById("myFormRocktavesOnline").onsubmit = function registerFor
 	members = document.getElementById("register-members-ro").value;
 	region = document.getElementById("register-region-ro").value;
 	state = document.getElementById('west-region').value || document.getElementById('north-east-region').value || document.getElementById('south-west-region').value || document.getElementById('south-east-region').value
-	city = document.getElementById('register-city-ro').value;
 	entry1 = document.getElementById("register-entry1-ro").value;
 	entry2 = document.getElementById("register-entry2-ro").value;
 	entries = document.getElementById("register-entries-ro").value;
@@ -236,7 +235,6 @@ document.getElementById("myFormRocktavesOnline").onsubmit = function registerFor
 				number_of_members: members,
 				region: region,
 				state: state,
-				city: city,
 				entry1: entry1,
 				entry2: entry2,
 				enteries: entries
