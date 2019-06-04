@@ -277,6 +277,10 @@ html, body {
 	max-width: 20vw;
 	border-radius: 50%;
 }
+.event-date {
+	font-size: 2em;
+	margin: 5%;
+}
 .register-for {
 	-webkit-transition: opacity 0.5s ease-in-out;
 	-moz-transition: opacity 0.5s ease-in-out;
@@ -441,6 +445,9 @@ select {
 	}
 	.event-body {
 		font-size: .9em;
+	}
+	.event-date {
+		font-size: 1.5em;
 	}
 	#register-message {
 		width: 80vw;
