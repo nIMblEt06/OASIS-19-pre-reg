@@ -224,6 +224,7 @@ document.getElementById("myFormRocktavesOnline").onsubmit = function registerFor
 		$.ajax({
 			type:'POST',
 			contentType: 'application/json',
+			crossDomain:true,
 			// headers: { 'x-my-custom-header': 'some value' },
 			url: URL,
 			data:JSON.stringify({
@@ -276,6 +277,7 @@ document.getElementById("myFormRocktavesOffline").onsubmit = function registerFo
 		$.ajax({
 			type:'POST',
 			contentType: 'application/json',
+			crossDomain:true,
 			// headers: { 'x-my-custom-header': 'some value' },
 			url: URL,
 			data:JSON.stringify({
@@ -322,6 +324,7 @@ document.getElementById("myFormRapwars").onsubmit = function registerForm(f)
 		$.ajax({
 			type:'POST',
 			contentType: 'application/json',
+			crossDomain:true,
 			// headers: { 'x-my-custom-header': 'some value' },
 			url: URL,
 			data:JSON.stringify({
@@ -368,6 +371,7 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
 		$.ajax({
 			type:'POST',
 			contentType: 'application/json',
+			crossDomain:true,
 			// headers: { 'x-my-custom-header': 'some value' },
 			url: URL,
 			data:JSON.stringify({
@@ -413,6 +417,7 @@ document.getElementById("myFormStandup").onsubmit = function registerForm(h)
 		$.ajax({
 			type:'POST',
 			contentType: 'application/json',
+			crossDomain:true,
 			// headers: { 'x-my-custom-header': 'some value' },
 			url: URL,
 			data:JSON.stringify({
