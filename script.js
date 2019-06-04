@@ -96,7 +96,6 @@ function fadeInRegister(id) {
 		function(){
       document.getElementById("register-bottom").style.opacity = 1;
       if (!document.getElementById(id+"-register").classList.contains("reg-closed")) {
-				if(id == "rocktaves")
         	document.getElementById(id+"-register").addEventListener("click", function() {register(id);});
       }
   }, 
