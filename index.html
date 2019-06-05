@@ -123,38 +123,31 @@
 						<input required type="email" name="email" placeholder="E-mail id" id="register-email-ro"><br>
 						<input required type="number" name="members" placeholder="No. of band members" id="register-members-ro" min="1"><br>
 						<label>Elimination round region & states:</label><br>
-						<label>Region: </label>
 						<select id="register-region-ro">
 							<option selected>Select</option>
-							<option value="west" onclick="selectRegion(this.value)" onchange="selectRegion(this.value)">West</option>
-							<option value="north-east" onclick="selectRegion(this.value)" onchange="selectRegion(this.value)">North East</option>
-							<option value="south-west" onclick="selectRegion(this.value)" onchange="selectRegion(this.value)">South West</option>
-							<option value="south-east" onclick="selectRegion(this.value)" onchange="selectRegion(this.value)">South East</option>
-						</select>
-						<br>
-						<label>State: </label>
-						<select id="west-region">
-							<option value="maharastra">Maharastra</option>
-							<option value="goa">Goa</option>
-							<option value="gujrat">Gujrat</option>
-						</select>
-						<select id="north-east-region">
-							<option value="assam">Assam</option>
-							<option value="meghalaya">Meghalaya</option>
-						</select>
-						<select id="south-west-region">
-							<option value="karnataka">Karnataka</option>
-							<option value="kerela">Kerela</option>
-							<option value="tamil-nadu">Tamil Nadu</option>
-						</select>
-						<select id="south-east-region">
-							<option value="andhra-pradesh">Andhra Pradesh</option>
-							<option value="telangana">Telangana</option>
+							<optgroup label="West" value="west-region">
+								<option value="maharastra">Maharastra</option>
+								<option value="goa">Goa</option>
+								<option value="gujrat">Gujrat</option>
+							</optgroup>
+							<optgroup label="North East" value="north-east-region">
+								<option value="assam">Assam</option>
+								<option value="meghalaya">Meghalaya</option>
+							</optgroup>
+							<optgroup label="South West" value="south-west-region">
+								<option value="karnataka">Karnataka</option>
+								<option value="kerela">Kerela</option>
+								<option value="tamil-nadu">Tamil Nadu</option>
+							</optgroup>
+							<optgroup label="South East" value="south-east-region">
+								<option value="andhra-pradesh">Andhra Pradesh</option>
+								<option value="telangana">Telangana</option>
+							</optgroup>
 						</select><br>
-							<label>Entries:*</label><br>
-						<input required type="text" name="entry1" placeholder="Entry 1" id="register-entry1-ro"><br>
-						<input required type="text" name="entry2" placeholder="Entry 2" id="register-entry2-ro"><br>
-						<input type="text" name="entries" placeholder="More entries" class="more-entries" id="register-entries-ro"/>
+						<label>Links to music:*</label><br>
+						<input required type="text" name="entry1" placeholder="Link 1" id="register-entry1-ro"><br>
+						<input required type="text" name="entry2" placeholder="Link 2" id="register-entry2-ro"><br>
+						<input type="text" name="entries" placeholder="More Links" class="more-entries" id="register-entries-ro"/>
 						<center><button type="submit" id="register-submit">Submit</button></center>
 					</form>
 					<form id="myFormRocktavesOffline">

@@ -186,19 +186,6 @@ function changeRoctavesForm(tabID) {
 	}
 }
 
-function selectRegion(region) {
-	if(region) {
-		document.getElementById('west-region').style.display = 'none';
-		document.getElementById('north-east-region').style.display = 'none';
-		document.getElementById('south-west-region').style.display = 'none';
-		document.getElementById('south-east-region').style.display = 'none';
-
-		if(region != 'Select')
-			document.getElementById(region + '-region').style.display = 'inline';
-	}
-}
-
-selectRegion(document.getElementById('register-region-ro').value);
 
 
 
@@ -206,14 +193,15 @@ selectRegion(document.getElementById('register-region-ro').value);
 
 document.getElementById("myFormRocktavesOnline").onsubmit = function registerForm(e)
 {
+	e.preventDefault();
 	name = document.getElementById("register-name-ro").value;
 	genre = document.getElementById("register-genre-ro").value;
 	contact1 = document.getElementById("register-contact-ro-1").value;
 	contact2 = document.getElementById("register-contact-ro-2").value;
 	email = document.getElementById("register-email-ro").value;
 	members = document.getElementById("register-members-ro").value;
-	region = document.getElementById("register-region-ro").value;
-	state = document.getElementById('west-region').value || document.getElementById('north-east-region').value || document.getElementById('south-west-region').value || document.getElementById('south-east-region').value
+	state = document.getElementById('register-region-ro').value;
+	region = document.getElementById("register-region-ro")[document.getElementById("register-region-ro").selectedIndex].parentNode.getAttribute('value');
 	entry1 = document.getElementById("register-entry1-ro").value;
 	entry2 = document.getElementById("register-entry2-ro").value;
 	entries = document.getElementById("register-entries-ro").value;
@@ -257,7 +245,6 @@ document.getElementById("myFormRocktavesOnline").onsubmit = function registerFor
 		document.getElementById("register-message-span").innerHTML = "Please fill all the required fields.";
 		document.getElementById("register-message").style.display = "flex";		
 	}
-	e.preventDefault();
 }
 
 document.getElementById("myFormRocktavesOffline").onsubmit = function registerForm(e)
