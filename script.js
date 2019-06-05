@@ -202,10 +202,11 @@ document.getElementById("myFormRocktavesOnline").onsubmit = function registerFor
 	members = document.getElementById("register-members-ro").value;
 	state = document.getElementById('register-region-ro').value;
 	region = document.getElementById("register-region-ro")[document.getElementById("register-region-ro").selectedIndex].parentNode.getAttribute('value');
+	city = document.getElementById("register-city-ro").value;
 	entry1 = document.getElementById("register-entry1-ro").value;
 	entry2 = document.getElementById("register-entry2-ro").value;
 	entries = document.getElementById("register-entries-ro").value;
-	if(name!="" && genre!="" && contact1!="" && contact2!="" && email!="" && members!="" && region!="" && state!="" && entry1!="" && entry2!="")
+	if(name!="" && genre!="" && contact1!="" && contact2!="" && email!="" && members!="" && region!="" && state!="" && city!="" && entry1!="" && entry2!="")
 	{
 		URL = "https://bits-oasis.org/preregistrations/RoctavesOnlineReg/";
 		$.ajax({
@@ -223,6 +224,7 @@ document.getElementById("myFormRocktavesOnline").onsubmit = function registerFor
 				number_of_members: members,
 				region: region,
 				state: state,
+				city: city,
 				entry1: entry1,
 				entry2: entry2,
 				enteries: entries
