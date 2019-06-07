@@ -307,7 +307,7 @@ document.getElementById("myFormRapwars").onsubmit = function registerForm(f)
 	citypref = document.getElementById("register-location-rw").value;
 	if(name!="" && rappername!="" && contact!="" && email!="" && city!="" && citypref!="")
 	{
-		URL = "https://bits-oasis.org/2018/preregistration/rapwars/";
+		URL = "https://bits-oasis.org/preregistrationsRapWarsRegistration/";
 		$.ajax({
 			type:'POST',
 			contentType: 'application/json',
@@ -354,7 +354,7 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
 	city = document.getElementById("register-location-pp").value;
 	if(name!="" && college!="" && year!="" && contact!="" && email!="" && city!="" && poetry!="")
 	{
-		URL = "https://bits-oasis.org/2018/preregistration/purpleprose/";
+		URL = "https://bits-oasis.org/preregistrations/PurpleProseRegistration/";
 		$.ajax({
 			type:'POST',
 			contentType: 'application/json',
@@ -400,7 +400,7 @@ document.getElementById("myFormStandup").onsubmit = function registerForm(h)
 	city = document.getElementById("register-location-ss").value;
 	if(name!="" && contact!="" && email!="" && months!="" && previous_competition!="" && city!="")
 	{
-		URL = "https://bits-oasis.org/2018/preregistration/soapbox/";
+		URL = "https://bits-oasis.org/preregistrations/StandupSoapboxRegistration/";
 		$.ajax({
 			type:'POST',
 			contentType: 'application/json',
