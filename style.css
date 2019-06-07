@@ -387,6 +387,7 @@ html, body {
 }
 #register-form label {
 	font-size: 1.2em;
+	color: #000;
 }
 .more-entries {
 	margin-bottom: 0 !important;
@@ -515,13 +516,16 @@ select {
 		text-align: center;
 	}
 	.types-of-form {
-		width: 70%;
+		width: 80%;
 	}
 	.rocktaves-form-note {
-		width: 70%;
+		width: 80%;
 	}
 	.types-of-form > span {
-		font-size: 1.2em;
+		font-size: 1.15em;
+	}
+	h1 {
+		font-size: 1.5em;
 	}
 }
 @media all and (max-width: 450px) {
