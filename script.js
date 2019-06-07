@@ -330,7 +330,8 @@ document.getElementById("myFormRapwars").onsubmit = function registerForm(f)
 				phone: contact,
 				email_address: email,
 				city: city,
-				city_of_participation: citypref
+				city_of_participation: citypref,
+				city: city
 			}),
 			dataType: "json",
 			error:function(xhr,textstatus,err){
@@ -361,8 +362,9 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
 	contact = document.getElementById("register-contact-pp").value;
 	email = document.getElementById("register-email-pp").value;
 	poetry = document.getElementById("register-poetry-pp").value;
-	city = document.getElementById("register-location-pp").value;
-	if(name!="" && college!="" && year!="" && contact!="" && email!="" && city!="" && poetry!="")
+	city = document.getElementById("register-city-pp").value;
+	citypref = document.getElementById("register-location-pp").value;
+	if(name!="" && college!="" && year!="" && contact!="" && email!="" && city!="" && poetry!="" && citypref!="")
 	{
 		URL = "https://bits-oasis.org/preregistrations/PurpleProseRegistration/";
 		$.ajax({
@@ -378,7 +380,8 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
 				phone: contact,
 				email_address: email,
 				entry: poetry,
-				city_of_participation: city,
+				city_of_participation: citypref,
+				city: city
 			}),
 			dataType: "json",
 			error:function(xhr,textstatus,err){
@@ -407,8 +410,9 @@ document.getElementById("myFormStandup").onsubmit = function registerForm(h)
 	email = document.getElementById("register-email-ss").value;
 	months = document.getElementById("register-months-ss").value;
 	previous_competition = document.getElementById("register-pre-comp-ss").value;
-	city = document.getElementById("register-location-ss").value;
-	if(name!="" && contact!="" && email!="" && months!="" && previous_competition!="" && city!="")
+	city = document.getElementById("register-city-ss").value;
+	citypref = document.getElementById("register-location-ss").value;
+	if(name!="" && contact!="" && email!="" && months!="" && previous_competition!="" && city!="" && citypref!="")
 	{
 		URL = "https://bits-oasis.org/preregistrations/StandupSoapboxRegistration/";
 		$.ajax({
@@ -423,7 +427,8 @@ document.getElementById("myFormStandup").onsubmit = function registerForm(h)
 				email_address: email,
 				time_doing_standup: months,
 				previous_competition: previous_competition,
-				city_of_participation: city, 
+				city_of_participation: citypref,
+				city: city 
 			}),
 			dataType: "json",
 			error:function(xhr,textstatus,err){

@@ -75,9 +75,10 @@
 					<!-- <img src="./media/rocktaves.png" alt="Rocktaves" class="event-logo" /> -->
 				<!-- </div> -->
 				<div class="event-body">
-					Eight years ago, a tiny idea creeped into the minds of the organisers of OASIS. Today, that idea has blossomed into one of the largest pan-India rap battle competitions. Rap Wars, the rap battle event of OASIS, BITS Pilani adds bars and pouches to this age old cultural fest of India. In the seven years to this date, we have risen, tumbled, had fun, fallen, enraptured, scratched ourselves, enthralled, been abused and entertained. We kept going. Esteemed artists like Raftaar, Vivian Divine, Rapture, Poetik Justis, Cizzy, Quixotic and many more have kept the audience on their feet at various editions of this event. This is your chance to make a mark.
-					To shake the floor and pop up the battle auditions are going to be held in Delhi, Mumbai, Banglore and Kolkata to get the best battlers onto the floor. 
-					Winners of the elimination rounds get an all-expense trip to Pilani during OASIS, 2018 to battle it out with the winners from the other cities; cash prizes worth over 30k and a chance to rise phenomenally in the public eye amongst other rewards
+						Seven Years worth immense efforts has led Rap Wars to become one of the most awaited rap battle in India. Original performances and diss battles between talented artists from across India will lead to one winner who out-raps them all. The hunt for the artist has begun!
+						If you think you have what it takes to rap your way to glory, we are coming to your gully! This year, elimination rounds will be held across four major cities in India:
+						Delhi, Mumbai, Kolkata, Bangalore.
+						Winners of each city get an all expense paid trip to Oasis 2019 in BITS Pilani to compete in the finals and win prizes upto 1.5 Lakh, Recording deals, Magazine Features and much more! 
 				</div>
 			</div>
 			<div id="purpleprose-content" class="event-container">
@@ -128,7 +129,7 @@
 						<input required type="email" name="email" placeholder="E-mail id" id="register-email-ro"><br>
 						<input required type="number" name="members" placeholder="No. of band members" id="register-members-ro" min="1"><br>
 						<label>Elimination round region & states:</label><br>
-						<select id="register-region-ro">
+						<select required id="register-region-ro">
 							<option value="" selected disabled hidden>Select</option>
 							<optgroup label="West" value="west-region">
 								<option value="maharashtra">Maharashtra</option>
@@ -166,7 +167,7 @@
 						<input required type="email" name="email" placeholder="E-mail id" id="off-register-email-ro"><br>
 						<input required type="number" name="members" placeholder="No. of band members" id="off-register-members-ro" min="1"><br>
 						<label>Elimination round cities:</label><br>
-						<select id="off-register-location-ro">
+						<select required id="off-register-location-ro">
 							<option value="" selected disabled hidden>Select</option>
 							<option value="bombay">Bombay</option>
 							<option value="delhi">Delhi</option>
@@ -183,13 +184,13 @@
 				<h1 class="register-for-head"></h1>
 				<div id="register-form">
 					<form id="myFormRapwars">
-						<input type="text" name="name" placeholder="Name" id="register-name-rw" /><br>
-						<input type="text" name="rappername" placeholder="Rapper name" id="register-rapper-rw" /><br>
-						<input type="number" name="contact" placeholder="Contact number" id="register-contact-rw" /><br>
-						<input type="email" name="email" placeholder="E-mail id" id="register-email-rw"><br>
-						<input type="text" name="city" placeholder="City" id="register-city-rw"><br>
+						<input required type="text" name="name" placeholder="Name" id="register-name-rw" /><br>
+						<input required type="text" name="rappername" placeholder="Rapper name" id="register-rapper-rw" /><br>
+						<input required type="number" name="contact" placeholder="Contact number" id="register-contact-rw" /><br>
+						<input required type="email" name="email" placeholder="E-mail id" id="register-email-rw"><br>
+						<input required type="text" name="city" placeholder="City of residence" id="register-city-rw" /><br>
 						<label>City of Participation:</label><br>
-						<select id="register-location-rw" placeholder="Select">
+						<select required id="register-location-rw" placeholder="Select">
 							<option value="" selected disabled hidden>Select</option>
 							<option value="bangalore">Bangalore</option>
 							<option value="delhi">Delhi</option>
@@ -204,14 +205,15 @@
 				<h1 class="register-for-head" style="margin-top: 10vh;"></h1>
 				<div id="register-form">
 					<form id="myFormPurpleprose">
-						<input type="text" name="name" placeholder="Name" id="register-name-pp" /><br>
-						<input type="text" name="college" placeholder="College Name" id="register-college-pp" /><br>
-						<input type="text" name="year" placeholder="Year and Stream of Study" id="register-year-pp" /><br>
-						<input type="number" name="contact" placeholder="Contact number" id="register-contact-pp" /><br>
-						<input type="email" name="email" placeholder="E-mail id" id="register-email-pp"><br>
-						<input type="text" name="poetry" placeholder="Any previous link to poetry" id="register-poetry-pp">
+						<input required type="text" name="name" placeholder="Name" id="register-name-pp" /><br>
+						<input required type="text" name="college" placeholder="College Name" id="register-college-pp" /><br>
+						<input required type="text" name="year" placeholder="Year and Stream of Study" id="register-year-pp" /><br>
+						<input required type="number" name="contact" placeholder="Contact number" id="register-contact-pp" /><br>
+						<input required type="email" name="email" placeholder="E-mail id" id="register-email-pp"><br>
+						<input required type="text" name="poetry" placeholder="Any previous link to poetry" id="register-poetry-pp">
+						<input required type="text" name="city" placeholder="City of residence" id="register-city-pp" /><br>
 						<label>City of Participation:</label><br>
-						<select id="register-location-pp">
+						<select required id="register-location-pp">
 							<option value="" selected disabled hidden>Select</option>
 							<option value="delhi">Delhi</option>
 							<option value="hyderabad">Hyderabad</option>
@@ -227,13 +229,14 @@
 				<h1 class="register-for-head"></h1>
 				<div id="register-form">
 					<form id="myFormStandup">
-						<input type="text" name="name" placeholder="Name" id="register-name-ss" /><br>
-						<input type="number" name="contact" placeholder="Contact number" id="register-contact-ss" /><br>
-						<input type="email" name="email" placeholder="E-mail id" id="register-email-ss"><br>
-						<input type="text" name="months" placeholder="Doing standup from last (in months)" id="register-months-ss">
-						<input type="text" name="previous_competition" placeholder="Details of any competition won before" id="register-pre-comp-ss">
+						<input required type="text" name="name" placeholder="Name" id="register-name-ss" /><br>
+						<input required type="number" name="contact" placeholder="Contact number" id="register-contact-ss" /><br>
+						<input required type="email" name="email" placeholder="E-mail id" id="register-email-ss"><br>
+						<input required type="text" name="months" placeholder="Doing standup from last (in months)" id="register-months-ss">
+						<input required type="text" name="previous_competition" placeholder="Details of any competition won before" id="register-pre-comp-ss">
+						<input required type="text" name="city" placeholder="City of residence" id="register-city-ss" /><br>
 						<label>City of Participation:</label><br>
-						<select id="register-location-ss">
+						<select required id="register-location-ss">
 							<option value="" selected disabled hidden>Select</option>
 							<option value="bengaluru">Bengaluru</option>
 							<option value="delhi">Delhi</option>
