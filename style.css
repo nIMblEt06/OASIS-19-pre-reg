@@ -147,10 +147,16 @@ html, body {
 	position: absolute;
 	height: 90%;
 	width: 100%;
-	/* background: url('./media/container_bg.jpg'); */
-	background: rgba(0, 0, 0, 0.75);
+	overflow: hidden;
+}
+#dummy-content-bg > div {
+	height: 100%;
+	width: 100%;
+	background: rgba(255, 255, 255, 0.4);
 	background-size: cover;
-	filter: blur(0.75);
+	-moz-filter: blur(20px);
+	-webkit-filter: blur(20px);
+	filter: blur(20px);
 }
 #nav-top {
     z-index: 999;
