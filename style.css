@@ -436,36 +436,11 @@ select {
 	-o-transition: opacity 0.5s ease-in-out;
 	transition: opacity 0.5s ease-in-out;
 }
+#register-message-span {
+	color: #000;
+}
 
 
-@keyframes glitch-left {
-    0% {
-      transform: translate(0);
-    }
-    33% {
-      transform: translate(-5px, 3px);
-    }
-    66% {
-      transform: translate(5px, -3px);
-    }
-    to {
-      transform: translate(0);
-    }
-  }
-  @keyframes glitch-left-2 {
-    0% {
-      transform: translate(0);
-    }
-    33% {
-      transform: translate(-5px, -3px);
-    }
-    66% {
-      transform: translate(5px, 2px);
-    }
-    to {
-      transform: translate(0);
-    }
-  }
 
 @media all and (max-width: 700px) {
 	.oasis-heading {

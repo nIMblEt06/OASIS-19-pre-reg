@@ -317,7 +317,7 @@ document.getElementById("myFormRapwars").onsubmit = function registerForm(f)
 	citypref = document.getElementById("register-location-rw").value;
 	if(name!="" && rappername!="" && contact!="" && email!="" && city!="" && citypref!="")
 	{
-		URL = "https://bits-oasis.org/preregistrationsRapWarsRegistration/";
+		URL = "https://bits-oasis.org/preregistrations/RapWarsRegistration/";
 		$.ajax({
 			type:'POST',
 			contentType: 'application/json',
