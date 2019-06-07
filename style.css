@@ -152,11 +152,8 @@ html, body {
 #dummy-content-bg > div {
 	height: 100%;
 	width: 100%;
-	background: rgba(255, 255, 255, 0.4);
-	background-size: cover;
-	-moz-filter: blur(20px);
-	-webkit-filter: blur(20px);
-	filter: blur(20px);
+	background: rgba(0, 0, 0, 0.7);
+	/* filter: blur(75px) */
 }
 #nav-top {
     z-index: 999;
