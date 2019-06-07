@@ -38,13 +38,17 @@ for(var i=0; i<document.getElementsByClassName("top-menu-items").length; i++)
 }
 
 function openEvent() {
+	document.getElementById('nav-top').style.color = '#fff';
+	document.getElementsByClassName('top-bar')[0].style.background = '#fff';
+	document.getElementsByClassName('social-icons')[0].style.filter = 'grayscale(0) invert(0)';
+
 	fadeOut(active_content);
 	document.getElementById("register-bottom").style.height = "10%";
 	if(this.id!="home"&&this.id!="contact")
 	{
 		registerContent = "register-content-"+this.id;
 		document.getElementById(registerContent).style.opacity = 0;
-	}
+}
 	next_content = this.id+"-content";
 	if(next_content == "home-content" || next_content == "contact-content")
 	{
@@ -108,6 +112,12 @@ function fadeOutRegister() {
 		transition_time);
 }	
 function register(id) {
+	setTimeout(function() {
+		document.getElementById('nav-top').style.color = '#000';
+		document.getElementsByClassName('top-bar')[0].style.background = '#000';
+		document.getElementsByClassName('social-icons')[0].style.filter = 'grayscale(1) invert(1)';
+	}, 500);
+
 	isRegisterOpen = !isRegisterOpen;
 	document.getElementById("register-bottom").style.height = "100%";
 	document.getElementById(id+"-content").style.opacity = 0;
