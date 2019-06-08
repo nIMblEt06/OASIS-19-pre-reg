@@ -3,12 +3,12 @@
 	src: url(./fonts/BebasNeue-Regular.ttf);
 }
 @font-face {
+	font-family: MarqueeMoon;
+	src: url(./fonts/marquee\ moon.ttf);
+}
+@font-face {
 	font-family: Gotham;
 	src: url(./fonts/Gotham-Regular.otf);
-}
-@font-face{
-	font-family: 'Roboto Condensed', sans-serif;
-
 }
 html, body {
 	height: 100vh;
@@ -19,7 +19,7 @@ html, body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-family: BebasNeue;
+	font-family: MarqueeMoon;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 	background: url('./media/bg.jpg');
@@ -71,7 +71,7 @@ html, body {
 	width: 70vw;
 }
 #register-bottom {
-	-webkit-transform:translate3d(0,0,0);
+	transform: translate3d(0,0,0);
 	z-index: 1;
 	position: absolute;
 	background: #fff;
@@ -259,7 +259,7 @@ html, body {
 }
 .oasis-slogan {
 	text-align: center;
-	margin-top: -3%;
+	margin-top: -2%;
     color: #fff;
     font-size: 4em;
 	text-shadow: #0ff 3px 3px 3px;
@@ -336,6 +336,7 @@ html, body {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 2%;
+	font-family: BebasNeue;
 }
 .types-of-form > span {
 	width: 50%;
@@ -391,6 +392,7 @@ html, body {
 #register-form label {
 	font-size: 1.2em;
 	color: #000;
+	font-family: BebasNeue;
 }
 .more-entries {
 	margin-bottom: 0 !important;
@@ -438,6 +440,7 @@ select {
 }
 #register-message-span {
 	color: #000;
+	font-family: BebasNeue;
 }
 
 
@@ -498,6 +501,7 @@ select {
 	}
 	.rocktaves-form-note {
 		width: 80%;
+		font-family: BebasNeue;
 	}
 	.types-of-form > span {
 		font-size: 1.15em;
