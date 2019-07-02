@@ -349,15 +349,16 @@ html, body {
 }
 .types-of-form > span:nth-of-type(1) {
 	border-right: 1px solid #cccccc;
-	text-decoration: underline;
 }
 .types-of-form > span:nth-of-type(2) {
 	border-left: 1px solid #cccccc;
+	text-decoration: underline;
 }
 .rocktaves-form-note {
 	letter-spacing: 0.5px;
 	color: red;
 	width: 40%;
+	font-family: BebasNeue;
 }
 #register-form {
 	width: 40%;
@@ -371,12 +372,14 @@ html, body {
 	color: #000;
 }
 #myFormRocktavesOnline {
-	display: none;
-	opacity: 0;
+	/* display: flex;
+	opacity: 0; */
+	display: block;
 	transition: 0.5s;
 }
 #myFormRocktavesOffline {
 	transition: 0.5s;
+	display: none;
 }
 #register-form input {
 	font-family: BebasNeue;
