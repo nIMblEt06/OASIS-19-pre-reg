@@ -84,26 +84,30 @@ function fadeIn(id) {
 		100);
 }
 function fadeInRegister(id) {
-	// if (id == "standup") {
-  //   		document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations closed for standup soapbox</span>';
-	// }else if (id == "purpleprose") {
+	if (id == "standup") {
+    		document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations closed for standup soapbox</span>';
+			document.getElementById("register-bottom").style.display = "flex";
+			setTimeout(function(){
+				document.getElementById("register-bottom").style.opacity = 1;
+			}, 100);
+	}
+	// else if (id == "purpleprose") {
 	// 	document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations closed for purple prose</span>';
 	// }
 	//  else {
 	// 	document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations closed for ' + id + '</span>';
 	// }
+	else {
+		document.getElementById("register-bottom").innerHTML = '<span id="' + id + '-register" style="cursor: pointer" class="register-for">Register</span>';
 
-	document.getElementById("register-bottom").innerHTML = '<span id="' + id + '-register" style="cursor: pointer" class="register-for">Register</span>';
-
-	document.getElementById("register-bottom").style.display = "flex";
-	setTimeout(
-		function(){
-      document.getElementById("register-bottom").style.opacity = 1;
-      if (!document.getElementById(id+"-register").classList.contains("reg-closed")) {
-        	document.getElementById(id+"-register").addEventListener("click", function() {register(id);});
-      }
-  }, 
-		100);
+		document.getElementById("register-bottom").style.display = "flex";
+		setTimeout(function(){
+			document.getElementById("register-bottom").style.opacity = 1;
+			if (!document.getElementById(id+"-register").classList.contains("reg-closed")) {
+				document.getElementById(id+"-register").addEventListener("click", function() {register(id);});
+			}
+		}, 100);
+	}
 }
 function fadeOutRegister() {
 	document.getElementById("register-bottom").style.opacity = 0;
