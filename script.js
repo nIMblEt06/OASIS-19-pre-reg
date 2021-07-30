@@ -314,99 +314,126 @@ document.getElementById("myFormRocktavesOffline").onsubmit = function registerFo
 
 document.getElementById("myFormRapwars").onsubmit = function registerForm(f)
 {
-	name = document.getElementById("register-name-rw").value;
-	rappername = document.getElementById("register-rapper-rw").value;
-	contact = document.getElementById("register-contact-rw").value;
-	email = document.getElementById("register-email-rw").value;
-	city = document.getElementById("register-city-rw").value;
-	citypref = document.getElementById("register-location-rw").value;
-	if(name!="" && rappername!="" && contact!="" && email!="" && city!="" && citypref!="")
-	{
-		URL = "https://bits-oasis.org/preregistrations/RapWarsRegistration/";
-		$.ajax({
-			type:'POST',
-			contentType: 'application/json',
-			crossDomain:true,
-			// headers: { 'x-my-custom-header': 'some value' },
-			url: URL,
-			data:JSON.stringify({
-				name: name,
-				rapper_name: rappername,
-				phone: contact,
-				email_address: email,
-				city: city,
-				city_of_participation: citypref,
-				city: city
-			}),
-			dataType: "json",
-			error:function(xhr,textstatus,err){
-				document.getElementById("register-overlay").style.display = "flex";
-				document.getElementById("register-message").style.display = "flex";
-				document.getElementById("register-message-span").innerHTML = "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
-			}
-		}).done(function(response){
-			document.getElementById("register-overlay").style.display = "flex";
-			document.getElementById("register-message").style.display = "flex";
-			document.getElementById("register-message-span").innerHTML = response.message;
-		});
-	}
-	else
-	{
-		document.getElementById("register-overlay").style.display = "flex";
-		document.getElementById("register-message-span").innerHTML = "Please fill all the required fields.";
-		document.getElementById("register-message").style.display = "flex";		
-	}
-	f.preventDefault();
+  name = document.getElementById("register-name-rw").value;
+  state = document.getElementById("register-state-rw").value;
+  city = document.getElementById("register-city-rw").value;
+  profession = document.getElementById("register-profession-rw").value;
+  college = document.getElementById("register-college-rw").value;
+  previous_performances = document.getElementById(
+    "register-pre-performance-rw"
+  ).value;
+  contact = document.getElementById("register-contact-rw").value;
+  email = document.getElementById("register-email-rw").value;
+  if (
+    name != "" &&
+    state != "" &&
+    city != "" &&
+    profession != "" &&
+    previous_performances != "" &&
+    contact != "" &&
+    email != ""
+  ) {
+    URL = "https://bits-oasis.org/preregistrations/RapWarsRegistration/";
+    $.ajax({
+      type: "POST",
+      contentType: "application/json",
+      crossDomain: true,
+      // headers: { 'x-my-custom-header': 'some value' },
+      url: URL,
+      data: JSON.stringify({
+        name: name,
+        state: state,
+        city: city,
+        profession: profession,
+        college_name: college,
+        previous_performances: previous_performances,
+        phone: contact,
+        email_address: email,
+      }),
+      dataType: "json",
+      error: function (xhr, textstatus, err) {
+        document.getElementById("register-overlay").style.display = "flex";
+        document.getElementById("register-message").style.display = "flex";
+        document.getElementById("register-message-span").innerHTML =
+          "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
+      },
+    }).done(function (response) {
+      document.getElementById("register-overlay").style.display = "flex";
+      document.getElementById("register-message").style.display = "flex";
+      document.getElementById("register-message-span").innerHTML =
+        response.message;
+    });
+  } else {
+    document.getElementById("register-overlay").style.display = "flex";
+    document.getElementById("register-message-span").innerHTML =
+      "Please fill all the required fields.";
+    document.getElementById("register-message").style.display = "flex";
+  }
+  h.preventDefault();
 }
 
 document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
 {
-	name = document.getElementById("register-name-pp").value;
-	college = document.getElementById("register-college-pp").value;
-	year = document.getElementById("register-year-pp").value;
-	contact = document.getElementById("register-contact-pp").value;
-	email = document.getElementById("register-email-pp").value;
-	poetry = document.getElementById("register-poetry-pp").value;
-	city = document.getElementById("register-city-pp").value;
-	citypref = document.getElementById("register-location-pp").value;
-	if(name!="" && college!="" && year!="" && contact!="" && email!="" && city!="" && poetry!="" && citypref!="")
-	{
-		URL = "https://bits-oasis.org/preregistrations/PurpleProseRegistration/";
-		$.ajax({
-			type:'POST',
-			contentType: 'application/json',
-			crossDomain:true,
-			// headers: { 'x-my-custom-header': 'some value' },
-			url: URL,
-			data:JSON.stringify({
-				name: name,
-				college: college,
-				year_and_stream_of_study: year,
-				phone: contact,
-				email_address: email,
-				entry: poetry,
-				city_of_participation: citypref,
-				city: city
-			}),
-			dataType: "json",
-			error:function(xhr,textstatus,err){
-				document.getElementById("register-overlay").style.display = "flex";
-				document.getElementById("register-message").style.display = "flex";
-				document.getElementById("register-message-span").innerHTML = "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
-			}
-		}).done(function(response){
-			document.getElementById("register-overlay").style.display = "flex";
-			document.getElementById("register-message").style.display = "flex";
-			document.getElementById("register-message-span").innerHTML = response.message;
-		});
-	}
-	else
-	{
-		document.getElementById("register-overlay").style.display = "flex";
-		document.getElementById("register-message-span").innerHTML = "Please fill all the required fields.";
-		document.getElementById("register-message").style.display = "flex";		
-	}
-	g.preventDefault();
+  name = document.getElementById("register-name-pp").value;
+  language = document.getElementById("register-language-pp").value;
+  country = document.getElementById("register-country-pp").value;
+  state = document.getElementById("register-state-pp").value;
+  city = document.getElementById("register-city-pp").value;
+  profession = document.getElementById("register-profession-pp").value;
+  college = document.getElementById("register-college-pp").value;
+  previous_performances = document.getElementById("register-pre-performance-pp").value;
+  contact = document.getElementById("register-contact-pp").value;
+  email = document.getElementById("register-email-pp").value;
+  if (
+    name != "" &&
+    language != "" &&
+    state != "" &&
+    country != "" &&
+    city != "" &&
+    profession != "" &&
+    previous_performances != "" &&
+    contact != "" &&
+    email != ""
+  ) {
+    URL = "https://bits-oasis.org/preregistrations/PurpleProseRegistration/";
+    $.ajax({
+      type: "POST",
+      contentType: "application/json",
+      crossDomain: true,
+      // headers: { 'x-my-custom-header': 'some value' },
+      url: URL,
+      data: JSON.stringify({
+        name: name,
+        language: language,
+        country: country,
+        state: state,
+        city: city,
+        profession: profession,
+        college_name: college,
+        previous_performances: previous_performances,
+        phone: contact,
+        email_address: email,
+      }),
+      dataType: "json",
+      error: function (xhr, textstatus, err) {
+        document.getElementById("register-overlay").style.display = "flex";
+        document.getElementById("register-message").style.display = "flex";
+        document.getElementById("register-message-span").innerHTML =
+          "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
+      },
+    }).done(function (response) {
+      document.getElementById("register-overlay").style.display = "flex";
+      document.getElementById("register-message").style.display = "flex";
+      document.getElementById("register-message-span").innerHTML =
+        response.message;
+    });
+  } else {
+    document.getElementById("register-overlay").style.display = "flex";
+    document.getElementById("register-message-span").innerHTML =
+      "Please fill all the required fields.";
+    document.getElementById("register-message").style.display = "flex";
+  }
+  h.preventDefault();
 }
 document.getElementById("myFormStandup").onsubmit = function registerForm(h)
 {
@@ -434,6 +461,58 @@ document.getElementById("myFormStandup").onsubmit = function registerForm(h)
 				previous_competition: previous_competition,
 				city_of_participation: citypref,
 				city: city 
+			}),
+			dataType: "json",
+			error:function(xhr,textstatus,err){
+				document.getElementById("register-overlay").style.display = "flex";
+				document.getElementById("register-message").style.display = "flex";
+        document.getElementById("register-message-span").innerHTML = "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
+			}
+		}).done(function(response){
+			document.getElementById("register-overlay").style.display = "flex";
+			document.getElementById("register-message").style.display = "flex";
+			document.getElementById("register-message-span").innerHTML = response.message;
+		});
+	}
+	else
+	{
+		document.getElementById("register-overlay").style.display = "flex";
+		document.getElementById("register-message-span").innerHTML = "Please fill all the required fields.";
+		document.getElementById("register-message").style.display = "flex";		
+	}
+	h.preventDefault();
+}
+/* <---------------MIRAGE FORM-----------------> */
+document.getElementById("myFormMirage").onsubmit = function registerForm(h)
+{
+	name = document.getElementById("register-name-mr").value;
+	language = document.getElementById("register-language-mr").value;
+	state = document.getElementById("register-state-mr").value;
+	city = document.getElementById("register-city-mr").value;
+	profession = document.getElementById("register-profession-mr").value;
+	college = document.getElementById("register-college-mr").value;
+	previous_performances = document.getElementById("register-pre-performance-mr").value;
+	contact = document.getElementById("register-contact-mr").value;
+	email = document.getElementById("register-email-mr").value;
+	if(name != "" && language != "" && state != "" && city!= "" && profession!="" && previous_performances!="" && contact!="" && email!="")
+	{
+		URL = "https://bits-oasis.org/preregistrations/MirageRegistration/";
+		$.ajax({
+			type:'POST',
+			contentType: 'application/json',
+			crossDomain:true,
+			// headers: { 'x-my-custom-header': 'some value' },
+			url: URL,
+			data:JSON.stringify({
+				name: name,
+				language: language,
+				state: state,
+				city: city, 
+				profession: profession,
+				college_name:college,
+				previous_performances: previous_performances,
+				phone: contact,
+				email_address: email
 			}),
 			dataType: "json",
 			error:function(xhr,textstatus,err){

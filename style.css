@@ -227,7 +227,7 @@ html, body {
 	display: none;
 	opacity: 0;
 }
-#rapwars-content {
+#rapwars-content, #mirage-content {
 	/* justify-content: space-between; */
 	-webkit-transition: opacity 0.5s ease-in-out;
 	-moz-transition: opacity 0.5s ease-in-out;
@@ -316,7 +316,7 @@ html, body {
 	transition: opacity 0.5s ease-in-out;
 	text-align: center;	
 }
-#register-content-rocktaves, #register-content-rapwars, #register-content-purpleprose, #register-content-standup {
+#register-content-rocktaves, #register-content-rapwars, #register-content-purpleprose, #register-content-standup, #register-content-mirage  {
 	-webkit-transform:translate3d(0,0,0);
 	z-index: 999;
 	width: 100%;
