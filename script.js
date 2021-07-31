@@ -134,7 +134,7 @@ function register(id) {
 		if(id == "standup"){
 			document.getElementsByClassName("register-for-head")[i].innerHTML = "Register for standup soapbox";
 		}else if(id == "purpleprose"){
-			document.getElementsByClassName("register-for-head")[i].innerHTML = "Register for " + "purple prose";
+			document.getElementsByClassName("register-for-head")[i].innerHTML = "Register for Purple Prose";
 		}
 		else{
 			document.getElementsByClassName("register-for-head")[i].innerHTML = "Register for " + id;
@@ -376,7 +376,7 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
 {
   name = document.getElementById("register-name-pp").value;
   language = document.getElementById("register-language-pp").value;
-/*   country = document.getElementById("register-country-pp").value; */
+  country = document.getElementById("register-country-pp").value;
   state = document.getElementById("register-state-pp").value;
   city = document.getElementById("register-city-pp").value;
   profession = document.getElementById("register-profession-pp").value;
@@ -389,7 +389,7 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
     name != "" &&
     language != "" &&
     state != "" &&
-    /* country != "" && */
+    country != "" &&
     city != "" &&
     profession != "" &&
     previous_performances != "" &&
@@ -406,6 +406,7 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
       data: JSON.stringify({
         name: name,
         language_of_poetry: language,
+		country: country,
         state: state,
         city: city,
         isStudent: isStudent,
