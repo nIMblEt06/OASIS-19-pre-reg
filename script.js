@@ -84,7 +84,7 @@ function fadeIn(id) {
 		100);
 }
 function fadeInRegister(id) {
-	if (id == "standup") {
+	if (id == "") {
     		document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations closed for standup soapbox</span>';
 			document.getElementById("register-bottom").style.display = "flex";
 			setTimeout(function(){
@@ -172,6 +172,11 @@ function closeRegister(h) {
 	document.getElementById("register-overlay").style.display = "none";
 	document.getElementById("register-message").style.display = "none";
 	h.preventDefault();
+}
+function closeRegister(i) {
+	document.getElementById("register-overlay").style.display = "none";
+	document.getElementById("register-message").style.display = "none";
+	i.preventDefault();
 }
 
 function changeRoctavesForm(tabID) {
@@ -324,6 +329,7 @@ document.getElementById("myFormRapwars").onsubmit = function registerForm(f)
   ).value;
   contact = document.getElementById("register-contact-rw").value;
   email = document.getElementById("register-email-rw").value;
+  isStudent = document.getElementById("register-isStudent-rw").checked;
   if (
     name != "" &&
     state != "" &&
@@ -345,72 +351,7 @@ document.getElementById("myFormRapwars").onsubmit = function registerForm(f)
         state: state,
         city: city,
         profession: profession,
-        college_name: college,
-        previous_performances: previous_performances,
-        phone: contact,
-        email_address: email,
-      }),
-      dataType: "json",
-      error: function (xhr, textstatus, err) {
-        document.getElementById("register-overlay").style.display = "flex";
-        document.getElementById("register-message").style.display = "flex";
-        document.getElementById("register-message-span").innerHTML =
-          "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
-      },
-    }).done(function (response) {
-      document.getElementById("register-overlay").style.display = "flex";
-      document.getElementById("register-message").style.display = "flex";
-      document.getElementById("register-message-span").innerHTML =
-        response.message;
-    });
-  } else {
-    document.getElementById("register-overlay").style.display = "flex";
-    document.getElementById("register-message-span").innerHTML =
-      "Please fill all the required fields.";
-    document.getElementById("register-message").style.display = "flex";
-  }
-  h.preventDefault();
-}
-
-document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
-{
-  name = document.getElementById("register-name-pp").value;
-  language = document.getElementById("register-language-pp").value;
-  country = document.getElementById("register-country-pp").value;
-  state = document.getElementById("register-state-pp").value;
-  city = document.getElementById("register-city-pp").value;
-  profession = document.getElementById("register-profession-pp").value;
-  college = document.getElementById("register-college-pp").value;
-  previous_performances = document.getElementById("register-pre-performance-pp").value;
-  contact = document.getElementById("register-contact-pp").value;
-  email = document.getElementById("register-email-pp").value;
-  isStudent = document.getElementById("register-isStudent-pp").checked;
-  if (
-    name != "" &&
-    language != "" &&
-    state != "" &&
-    country != "" &&
-    city != "" &&
-    profession != "" &&
-    previous_performances != "" &&
-    contact != "" &&
-    email != ""
-  ) {
-    URL = "https://bits-oasis.org/pre-registrations/PurpleProseRegistration/";
-    $.ajax({
-      type: "POST",
-      contentType: "application/json",
-      crossDomain: true,
-      // headers: { 'x-my-custom-header': 'some value' },
-      url: URL,
-      data: JSON.stringify({
-        name: name,
-        language_of_poetry: language,
-		country: country,
-        state: state,
-        city: city,
         isStudent: isStudent,
-        profession: profession,
         college: college,
         previous_performances: previous_performances,
         phone: contact,
@@ -435,7 +376,75 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
       "Please fill all the required fields.";
     document.getElementById("register-message").style.display = "flex";
   }
-  h.preventDefault();
+  f.preventDefault();
+}
+
+document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
+{
+  name = document.getElementById("register-name-pp").value;
+  language = document.getElementById("register-language-pp").value;
+  state = document.getElementById("register-state-pp").value;
+  city = document.getElementById("register-city-pp").value;
+  country = document.getElementById("register-country-pp").value;
+  profession = document.getElementById("register-profession-pp").value;
+  college = document.getElementById("register-college-pp").value;
+  previous_performances = document.getElementById(
+    "register-pre-performance-pp"
+  ).value;
+  contact = document.getElementById("register-contact-pp").value;
+  email = document.getElementById("register-email-pp").value;
+  isStudent = document.getElementById("register-isStudent-pp").checked;
+  if (
+    name != "" &&
+    state != "" &&
+    city != "" &&
+    profession != "" &&
+    previous_performances != "" &&
+    contact != "" &&
+    email != ""
+  ) {
+    URL = "https://bits-oasis.org/pre-registrations/MirageRegistration/";
+    ``;
+    $.ajax({
+      type: "POST",
+      contentType: "application/json",
+      crossDomain: true,
+      // headers: { 'x-my-custom-header': 'some value' },
+      url: URL,
+      data: JSON.stringify({
+        name: name,
+        language_of_poetry: language,
+        state: state,
+        city: city,
+		country: country,
+        isStudent: isStudent,
+        profession: profession,
+        college: college,
+        previous_performances: previous_performances,
+        phone: contact,
+        email_address: email,
+      }),
+      dataType: "json",
+      error: function (xhr, textstatus, err) {
+        document.getElementById("register-overlay").style.display = "flex";
+        document.getElementById("register-message").style.display = "flex";
+        document.getElementById("register-message-span").innerHTML =
+          "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
+      },
+    }).done(function (response) {
+      document.getElementById("register-overlay").style.display = "flex";
+      document.getElementById("register-message").style.display = "flex";
+      document.getElementById("register-message-span").innerHTML =
+        response.message;
+      console.log(response);
+    });
+  } else {
+    document.getElementById("register-overlay").style.display = "flex";
+    document.getElementById("register-message-span").innerHTML =
+      "Please fill all the required fields.";
+    document.getElementById("register-message").style.display = "flex";
+  }
+  /* h.preventDefault(); */
 }
 document.getElementById("myFormStandup").onsubmit = function registerForm(h)
 {
