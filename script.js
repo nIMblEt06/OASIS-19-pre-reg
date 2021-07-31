@@ -403,7 +403,7 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
     contact != "" &&
     email != ""
   ) {
-    URL = "https://bits-oasis.org/pre-registrations/MirageRegistration/";
+    URL = "https://bits-oasis.org/pre-registrations/PurpleProseRegistration/";
     ``;
     $.ajax({
       type: "POST",
