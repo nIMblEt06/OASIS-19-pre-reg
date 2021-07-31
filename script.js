@@ -14,6 +14,23 @@ function getCookie(name) {
 }
 var csrftoken = getCookie('csrftoken');
 
+/* <---IS STUDENT Check BOX ------>*/
+var checkbox = document.getElementById("register-isStudent-mr");
+
+checkbox.addEventListener("change", function () {
+  if (this.checked) {
+    console.log("Checkbox is checked..");
+	for (var i=0;i<3;i++){
+		document.getElementsByName("college")[i].style.display="block";
+	}
+  } else {
+    console.log("Checkbox is not checked..");
+	for (var i = 0; i < 3; i++) {
+    document.getElementsByName("college")[i].style.display = "none";
+  }
+  }
+});
+/* <----------------------------------------------------------------> */
 $.ajaxSetup({
   beforeSend: function(xhr, settings) {
       if (csrftoken) {
@@ -192,16 +209,16 @@ function changeRoctavesForm(tabID) {
 		}, transition_time);
 		document.getElementById('offline-form-tab').style.textDecoration = "none";
 	} else {
-		// document.getElementById('myFormRocktavesOnline').style.opacity = 0;
-		// setTimeout(function() {
-		// 	document.getElementById('myFormRocktavesOnline').style.display = "none";
-		// 	document.getElementById('myFormRocktavesOffline').style.display = "block";
-		// 	setTimeout(function() {
-		// 		document.getElementById('myFormRocktavesOffline').style.opacity = 1;
-		// 		document.getElementById('offline-form-tab').style.textDecoration = "underline";
-		// 	}, 10);
-		// }, transition_time);
-		// document.getElementById('online-form-tab').style.textDecoration = "none";
+		/* document.getElementById('myFormRocktavesOnline').style.opacity = 0;
+		setTimeout(function() {
+			document.getElementById('myFormRocktavesOnline').style.display = "none";
+			document.getElementById('myFormRocktavesOffline').style.display = "block";
+			setTimeout(function() {
+				document.getElementById('myFormRocktavesOffline').style.opacity = 1;
+				document.getElementById('offline-form-tab').style.textDecoration = "underline";
+			}, 10);
+		}, transition_time);
+		document.getElementById('online-form-tab').style.textDecoration = "none"; */
 		alert("Sorry! the offline registration have been closed");
 	}
 }
@@ -444,7 +461,7 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
       "Please fill all the required fields.";
     document.getElementById("register-message").style.display = "flex";
   }
-  /* h.preventDefault(); */
+  g.preventDefault();
 }
 document.getElementById("myFormStandup").onsubmit = function registerForm(h)
 {
