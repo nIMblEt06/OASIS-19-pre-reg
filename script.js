@@ -223,7 +223,7 @@ document.getElementById("myFormRocktavesOnline").onsubmit = function registerFor
 	entries = document.getElementById("register-entries-ro").value;
 	if(name!="" && genre!="" && contact1!="" && contact2!="" && email!="" && members!="" && region!="" && state!="" && city!="" && entry1!="" && entry2!="")
 	{
-		URL = "https://bits-oasis.org/preregistrations/RoctavesOnlineReg/";
+		URL = "https://bits-oasis.org/pre-registrations/RoctavesOnlineReg/";
 		$.ajax({
 			type:'POST',
 			contentType: 'application/json',
@@ -275,7 +275,7 @@ document.getElementById("myFormRocktavesOffline").onsubmit = function registerFo
 	elemLocation = document.getElementById("off-register-location-ro").value;
 	if(name!="" && genre!="" && contact1!="" && contact2!="" && email!="" && members!="" && elemLocation!="")
 	{
-		URL = "https://bits-oasis.org/preregistrations/RoctavesOfflineReg/";
+		URL = "https://bits-oasis.org/pre-registrations/RoctavesOfflineReg/";
 		$.ajax({
 			type:'POST',
 			contentType: 'application/json',
@@ -333,7 +333,7 @@ document.getElementById("myFormRapwars").onsubmit = function registerForm(f)
     contact != "" &&
     email != ""
   ) {
-    URL = "https://bits-oasis.org/preregistrations/RapWarsRegistration/";
+    URL = "https://bits-oasis.org/pre-registrations/RapWarsRegistration/";
     $.ajax({
       type: "POST",
       contentType: "application/json",
@@ -395,7 +395,7 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
     contact != "" &&
     email != ""
   ) {
-    URL = "https://bits-oasis.org/preregistrations/PurpleProseRegistration/";
+    URL = "https://bits-oasis.org/pre-registrations/PurpleProseRegistration/";
     $.ajax({
       type: "POST",
       contentType: "application/json",
@@ -446,7 +446,7 @@ document.getElementById("myFormStandup").onsubmit = function registerForm(h)
 	citypref = document.getElementById("register-location-ss").value;
 	if(name!="" && contact!="" && email!="" && months!="" && previous_competition!="" && city!="" && citypref!="")
 	{
-		URL = "https://bits-oasis.org/preregistrations/StandupSoapboxRegistration/";
+		URL = "https://bits-oasis.org/pre-registrations/StandupSoapboxRegistration/";
 		$.ajax({
 			type:'POST',
 			contentType: 'application/json',
@@ -496,7 +496,7 @@ document.getElementById("myFormMirage").onsubmit = function registerForm(h)
 	email = document.getElementById("register-email-mr").value;
 	if(name != "" && language != "" && state != "" && city!= "" && profession!="" && previous_performances!="" && contact!="" && email!="")
 	{
-		URL = "https://bits-oasis.org/preregistrations/MirageRegistration/";
+		URL = "https://bits-oasis.org/pre-registrations/MirageRegistration/";
 		$.ajax({
 			type:'POST',
 			contentType: 'application/json',
