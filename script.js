@@ -376,7 +376,7 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
 {
   name = document.getElementById("register-name-pp").value;
   language = document.getElementById("register-language-pp").value;
-  country = document.getElementById("register-country-pp").value;
+/*   country = document.getElementById("register-country-pp").value; */
   state = document.getElementById("register-state-pp").value;
   city = document.getElementById("register-city-pp").value;
   profession = document.getElementById("register-profession-pp").value;
@@ -384,11 +384,12 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
   previous_performances = document.getElementById("register-pre-performance-pp").value;
   contact = document.getElementById("register-contact-pp").value;
   email = document.getElementById("register-email-pp").value;
+  isStudent = document.getElementById("register-isStudent-pp").checked;
   if (
     name != "" &&
     language != "" &&
     state != "" &&
-    country != "" &&
+    /* country != "" && */
     city != "" &&
     profession != "" &&
     previous_performances != "" &&
@@ -404,12 +405,12 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
       url: URL,
       data: JSON.stringify({
         name: name,
-        language: language,
-        country: country,
+        language_of_poetry: language,
         state: state,
         city: city,
+        isStudent: isStudent,
         profession: profession,
-        college_name: college,
+        college: college,
         previous_performances: previous_performances,
         phone: contact,
         email_address: email,
@@ -494,43 +495,54 @@ document.getElementById("myFormMirage").onsubmit = function registerForm(h)
 	previous_performances = document.getElementById("register-pre-performance-mr").value;
 	contact = document.getElementById("register-contact-mr").value;
 	email = document.getElementById("register-email-mr").value;
-	if(name != "" && language != "" && state != "" && city!= "" && profession!="" && previous_performances!="" && contact!="" && email!="")
-	{
-		URL = "https://bits-oasis.org/pre-registrations/MirageRegistration/";
-		$.ajax({
-			type:'POST',
-			contentType: 'application/json',
-			crossDomain:true,
-			// headers: { 'x-my-custom-header': 'some value' },
-			url: URL,
-			data:JSON.stringify({
-				name: name,
-				language: language,
-				state: state,
-				city: city, 
-				profession: profession,
-				college_name:college,
-				previous_performances: previous_performances,
-				phone: contact,
-				email_address: email
-			}),
-			dataType: "json",
-			error:function(xhr,textstatus,err){
-				document.getElementById("register-overlay").style.display = "flex";
-				document.getElementById("register-message").style.display = "flex";
-        document.getElementById("register-message-span").innerHTML = "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
-			}
-		}).done(function(response){
-			document.getElementById("register-overlay").style.display = "flex";
-			document.getElementById("register-message").style.display = "flex";
-			document.getElementById("register-message-span").innerHTML = response.message;
-		});
-	}
-	else
-	{
-		document.getElementById("register-overlay").style.display = "flex";
-		document.getElementById("register-message-span").innerHTML = "Please fill all the required fields.";
-		document.getElementById("register-message").style.display = "flex";		
-	}
+	isStudent = document.getElementById("register-isStudent-mr").checked;
+    if (
+      name != "" &&
+      state != "" &&
+      city != "" &&
+      profession != "" &&
+      previous_performances != "" &&
+      contact != "" &&
+      email != ""
+    ) {
+      URL = "https://bits-oasis.org/pre-registrations/MirageRegistration/";``
+      $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        crossDomain: true,
+        // headers: { 'x-my-custom-header': 'some value' },
+        url: URL,
+        data: JSON.stringify({
+          name: name,
+          language_of_poetry: language,
+          state: state,
+          city: city,
+		  isStudent: isStudent,
+          profession: profession,
+          college: college,
+          previous_performances: previous_performances,
+          phone: contact,
+          email_address: email,
+        }),
+        dataType: "json",
+        error: function (xhr, textstatus, err) {
+          document.getElementById("register-overlay").style.display = "flex";
+          document.getElementById("register-message").style.display = "flex";
+          document.getElementById("register-message-span").innerHTML =
+            "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
+        },
+      }).done(function (response) {
+        document.getElementById("register-overlay").style.display = "flex";
+        document.getElementById("register-message").style.display = "flex";
+        document.getElementById("register-message-span").innerHTML =
+          response.message;
+        console.log(response);
+      });
+    } else {
+      document.getElementById("register-overlay").style.display = "flex";
+      document.getElementById("register-message-span").innerHTML =
+        "Please fill all the required fields.";
+      document.getElementById("register-message").style.display = "flex";
+    }
 	h.preventDefault();
 }
