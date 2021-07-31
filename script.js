@@ -15,19 +15,61 @@ function getCookie(name) {
 var csrftoken = getCookie('csrftoken');
 
 /* <---IS STUDENT Check BOX ------>*/
+var checkbox = document.getElementById("register-isStudent-rw");
+
+checkbox.addEventListener("change", function () {
+  if (this.checked) {
+    console.log("Checkbox is checked..");
+	
+		document.getElementById("register-college-rw").style.display="block";
+		document.getElementById("register-profession-rw").value="STUDENT";
+		document.getElementById("register-profession-rw").disabled=true;
+	
+  } else {
+    console.log("Checkbox is not checked..");
+	
+    document.getElementById("register-college-rw").style.display = "none";
+	document.getElementById("register-profession-rw").value = "";
+    document.getElementById("register-profession-rw").disabled = false;
+  
+  }
+});
+var checkbox = document.getElementById("register-isStudent-pp");
+
+checkbox.addEventListener("change", function () {
+  if (this.checked) {
+    console.log("Checkbox is checked..");
+	
+		document.getElementById("register-college-pp").style.display="block";
+		document.getElementById("register-profession-pp").value="STUDENT";
+		document.getElementById("register-profession-pp").disabled=true;
+	
+  } else {
+    console.log("Checkbox is not checked..");
+	
+    document.getElementById("register-college-pp").style.display = "none";
+	document.getElementById("register-profession-pp").value = "";
+    document.getElementById("register-profession-pp").disabled = false;
+  
+  }
+});
 var checkbox = document.getElementById("register-isStudent-mr");
 
 checkbox.addEventListener("change", function () {
   if (this.checked) {
     console.log("Checkbox is checked..");
-	for (var i=0;i<3;i++){
-		document.getElementsByName("college")[i].style.display="block";
-	}
+	
+		document.getElementById("register-college-mr").style.display="block";
+		document.getElementById("register-profession-mr").value="STUDENT";
+		document.getElementById("register-profession-mr").disabled=true;
+	
   } else {
     console.log("Checkbox is not checked..");
-	for (var i = 0; i < 3; i++) {
-    document.getElementsByName("college")[i].style.display = "none";
-  }
+	
+    document.getElementById("register-college-mr").style.display = "none";
+	document.getElementById("register-profession-mr").value = "";
+    document.getElementById("register-profession-mr").disabled = false;
+  
   }
 });
 /* <----------------------------------------------------------------> */
