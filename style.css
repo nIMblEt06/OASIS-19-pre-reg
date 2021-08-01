@@ -26,9 +26,9 @@ html, body {
 	font-family: MarqueeMoon;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
-	background: url('./media/bitsfront2.jpeg');
+	background: url('./media/bitsfront.jpeg');
 	background-size: cover;
-	background-position: 50% 40%;
+	background-position: 50% 10%;
 	color: #fff;
 	
 }
@@ -264,7 +264,7 @@ html, body {
 	font-family: Motion;
 	color: #fff;
 	font-size: 7em;
-	text-shadow: #008080 4px 4px 4px;
+	text-shadow: #9d2331 4px 4px 4px;
 }
 .oasis-slogan {
 	text-align: center;
@@ -276,7 +276,7 @@ html, body {
     display: block;
 }
 .oasis-logo {
-	filter: drop-shadow(7.5px 7.5px 7.5px #008080);
+	filter: drop-shadow(7.5px 7.5px 7.5px #9d2331);
 	max-height: 9em;
 }
 .event-container {
