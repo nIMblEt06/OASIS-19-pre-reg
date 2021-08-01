@@ -10,6 +10,10 @@
 	font-family: Gotham;
 	src: url(./fonts/Gotham-Regular.otf);
 }
+@font-face {
+	font-family: Motion;
+	src: url(./fonts/ChuterolkFreeRegular-L3R55.ttf);
+}
 html, body {
 	height: 100vh;
 	width: 100vw;
@@ -22,10 +26,11 @@ html, body {
 	font-family: MarqueeMoon;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
-	background: url('./media/bg.jpg');
+	background: url('./media/bitsfront2.jpeg');
 	background-size: cover;
-	background-position: 50% 50%;
+	background-position: 50% 40%;
 	color: #fff;
+	
 }
 #register-overlay {
 	z-index: 999;
@@ -256,9 +261,10 @@ html, body {
 }
 .oasis-heading {
 	text-align: center;
+	font-family: Motion;
 	color: #fff;
 	font-size: 7em;
-	text-shadow: #f0f 4px 4px 4px;
+	text-shadow: #008080 4px 4px 4px;
 }
 .oasis-slogan {
 	text-align: center;
@@ -270,7 +276,7 @@ html, body {
     display: block;
 }
 .oasis-logo {
-	filter: drop-shadow(7.5px 7.5px 7.5px #f0f);
+	filter: drop-shadow(7.5px 7.5px 7.5px #008080);
 	max-height: 9em;
 }
 .event-container {
