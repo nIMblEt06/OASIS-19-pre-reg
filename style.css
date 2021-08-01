@@ -291,7 +291,7 @@ html, body {
 .event-name {
 	color: #fff;
 	font-size: 5.5em;
-	text-shadow: #0ff 3px 3px 3px;
+	/* text-shadow: #0ff 3px 3px 3px; */
 	text-align: center;
 	flex-grow: .34;
 }
@@ -472,6 +472,9 @@ select {
 	}
 	.oasis-slogan {
 		font-size: 3em;
+	}
+	body,html {
+		background-position: 90% 100%;
 	}
 }
 @media all and (max-width: 600px) {
