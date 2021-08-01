@@ -23,7 +23,7 @@ html, body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-family: MarqueeMoon;
+	font-family: Motion;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 	background: url('./media/bitsfront.jpeg');
