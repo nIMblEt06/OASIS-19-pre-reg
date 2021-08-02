@@ -143,8 +143,8 @@ function fadeIn(id) {
 		100);
 }
 function fadeInRegister(id) {
-	if (id == "") {
-    		document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations closed for standup soapbox</span>';
+	if (id == "rapwars") {
+    		document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations closed for Rapwars</span>';
 			document.getElementById("register-bottom").style.display = "flex";
 			setTimeout(function(){
 				document.getElementById("register-bottom").style.opacity = 1;
