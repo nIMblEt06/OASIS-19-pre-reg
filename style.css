@@ -476,6 +476,11 @@ select {
 	body,html {
 		background-position: 90% 100%;
 	}
+	#nav-bottom{
+		overflow: auto;
+		white-space: nowrap;
+		flex-wrap: nowrap;
+	}
 }
 @media all and (max-width: 600px) {
 	#container {
