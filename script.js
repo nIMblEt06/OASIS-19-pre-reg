@@ -73,6 +73,22 @@ checkbox.addEventListener("change", function () {
   }
 });
 /* <----------------------------------------------------------------> */
+/* <---------------Country Dropdown-------------------------------> */
+var tempcountry = document.getElementById("register-country-pp");
+var tempstate = document.getElementById("register-state-pp");
+tempcountry.addEventListener("change",function(){
+	if(tempcountry.value!="India") { 
+		tempstate.disabled = true;
+		tempstate.value = "Not Applicable";
+		tempstate.selected = "Not Applicable";
+	}
+	else {
+		tempstate.disabled = false;
+		tempstate.value = "";
+    	tempstate.selected = "Select";
+	}
+})
+/* <----------------------------------------------------------------> */
 $.ajaxSetup({
   beforeSend: function(xhr, settings) {
       if (csrftoken) {
