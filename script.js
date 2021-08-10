@@ -143,14 +143,14 @@ function fadeIn(id) {
 		100);
 }
 function fadeInRegister(id) {
-	if (id == "rapwars") {
+	/* if (id == "rapwars") {
     		document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations closed for Rapwars</span>';
 			document.getElementById("register-bottom").style.display = "flex";
 			setTimeout(function(){
 				document.getElementById("register-bottom").style.opacity = 1;
 			}, 100);
-	}
-	else if (id == "standup") {
+	} */
+	if (id == "standup") {
     		document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations will open soon.</span>';
 			document.getElementById("register-bottom").style.display = "flex";
 			setTimeout(function(){
