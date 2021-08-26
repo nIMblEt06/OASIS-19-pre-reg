@@ -174,14 +174,14 @@ function fadeInRegister(id) {
 			}, 100);
 	}
 	else if (id == "rapwars") {
-    		document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations for Rapwars have been put on hold for a few days due to postponement of the event. In case of any queries, contact Isha at +91 8573960061.</span>';
+    		document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for"><br>Registrations for Rapwars have been put on hold for a few days due to postponement of the event. In case of any queries, contact Isha at +91 8573960061.<br><br></span>';
 			document.getElementById("register-bottom").style.display = "flex";
 			setTimeout(function(){
 				document.getElementById("register-bottom").style.opacity = 1;
 			}, 100);
 	}
 	else if (id == "mirage") {
-    		document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for">Registrations for Mirage have been put on hold for a few days due to postponement of the event. In case of any queries, contact Isha at +91 8573960061.</span>';
+    		document.getElementById("register-bottom").innerHTML = '<span id="" style="cursor: default" class="register-for"><br>Registrations for Mirage have been put on hold for a few days due to postponement of the event. In case of any queries, contact Isha at +91 8573960061.<br><br></span>';
 			document.getElementById("register-bottom").style.display = "flex";
 			setTimeout(function(){
 				document.getElementById("register-bottom").style.opacity = 1;
