@@ -2,19 +2,24 @@
 	font-family: BebasNeue;
 	src: url(./fonts/BebasNeue-Regular.ttf);
 }
+
 @font-face {
 	font-family: MarqueeMoon;
 	src: url(./fonts/marquee\ moon.ttf);
 }
+
 @font-face {
 	font-family: Gotham;
 	src: url(./fonts/Gotham-Regular.otf);
 }
+
 @font-face {
 	font-family: Motion;
 	src: url(./fonts/ChuterolkFreeRegular-L3R55.ttf);
 }
-html, body {
+
+html,
+body {
 	height: 100vh;
 	width: 100vw;
 	margin: 0;
@@ -30,21 +35,23 @@ html, body {
 	background-size: cover;
 	background-position: 50% 100%;
 	color: #fff;
-	
+
 }
+
 #register-overlay {
 	z-index: 999;
-	-webkit-transform: translate(0,0,0);
+	-webkit-transform: translate(0, 0, 0);
 	position: absolute;
 	top: 0;
 	left: 0;
 	height: 100vh;
 	width: 100vw;
-	background: rgba(0,0,0,0.7);
+	background: rgba(0, 0, 0, 0.7);
 	display: none;
 	justify-content: center;
 	align-items: center;
 }
+
 #register-message {
 	z-index: 9999;
 	position: absolute;
@@ -61,22 +68,25 @@ html, body {
 	justify-content: center;
 	text-align: center;
 }
+
 #register-close {
 	z-index: 9999;
-	transform: translate(0,0,0);
+	transform: translate(0, 0, 0);
 	position: absolute;
 	top: 10px;
 	right: 10px;
 	color: #000;
 	cursor: pointer;
 }
+
 #container {
 	position: relative;
 	height: 75vh;
 	width: 70vw;
 }
+
 #register-bottom {
-	transform: translate3d(0,0,0);
+	transform: translate3d(0, 0, 0);
 	z-index: 1;
 	position: absolute;
 	background: #fff;
@@ -85,27 +95,29 @@ html, body {
 	z-index: 10;
 	height: 10%;
 	width: 100%;
-	text-transform: uppercase;	
+	text-transform: uppercase;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 	font-family: BebasNeue;
-	-webkit-transition: opacity 0.5s ease-in-out, height 0.5s cubic-bezier(1,.01,.9,.71);
-	-moz-transition: opacity 0.5s ease-in-out, height 0.5s cubic-bezier(1,.01,.9,.71);
-	-o-transition: opacity 0.5s ease-in-out, height 0.5s cubic-bezier(1,.01,.9,.71);
-	transition: opacity 0.5s ease-in-out, height 0.5s cubic-bezier(1,.01,.9,.71);
+	-webkit-transition: opacity 0.5s ease-in-out, height 0.5s cubic-bezier(1, .01, .9, .71);
+	-moz-transition: opacity 0.5s ease-in-out, height 0.5s cubic-bezier(1, .01, .9, .71);
+	-o-transition: opacity 0.5s ease-in-out, height 0.5s cubic-bezier(1, .01, .9, .71);
+	transition: opacity 0.5s ease-in-out, height 0.5s cubic-bezier(1, .01, .9, .71);
 	opacity: 0;
 	display: none;
 }
+
 #register-bottom span {
 	font-size: 1.2em;
 	cursor: pointer;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	display: flex;
 }
+
 #nav-bottom {
 	position: absolute;
 	background: #fff;
@@ -126,14 +138,17 @@ html, body {
 	-o-transition: opacity 0.5s ease-in-out;
 	transition: opacity 0.5s ease-in-out;
 }
+
 #nav-bottom span {
 	font-size: 1.4em;
 	margin-right: 5%;
 	cursor: pointer;
 }
+
 #nav-bottom span:last-child {
 	margin-right: 0;
 }
+
 .dummy-nav-bottom {
 	position: absolute;
 	background: #fff;
@@ -142,6 +157,7 @@ html, body {
 	width: 100%;
 	z-index: 5;
 }
+
 #content {
 	position: absolute;
 	top: 0;
@@ -150,20 +166,23 @@ html, body {
 	display: flex;
 	flex-direction: column;
 }
+
 #dummy-content-bg {
 	position: absolute;
 	height: 90%;
 	width: 100%;
 	overflow: hidden;
 }
-#dummy-content-bg > div {
+
+#dummy-content-bg>div {
 	height: 100%;
 	width: 100%;
 	background: rgba(0, 0, 0, 0.75);
 	filter: blur(0.75)
 }
+
 #nav-top {
-    z-index: 999;
+	z-index: 999;
 	height: 15%;
 	width: 100%;
 	text-transform: uppercase;
@@ -176,41 +195,50 @@ html, body {
 	transition: 0.5s;
 	font-family: BebasNeue;
 }
+
 .top-menu {
 	display: flex;
 	align-items: center;
 	font-size: 1.6em;
 }
+
 .top-menu span {
 	padding-right: 0.5em;
 	cursor: pointer;
 }
+
 .top-menu span:last-child {
 	padding-right: 0;
 }
+
 .top-bar {
 	width: 100%;
 	height: 3px;
 	background: #fff;
 	margin: 0 3% 0 3%;
 }
+
 .social-icons {
 	display: flex;
 	align-items: center;
 	height: 100%;
 }
+
 .social-icons div {
 	height: 40%;
 	width: 40%;
 	padding-right: 1vw;
 }
+
 .social-icons-img {
 	cursor: pointer;
 	max-height: 100%;
 }
+
 .social-icons div:last-child {
 	padding-right: 0%;
 }
+
 #home-content {
 	width: 100%;
 	height: 100%;
@@ -223,6 +251,7 @@ html, body {
 	-o-transition: opacity 0.5s ease-in-out;
 	transition: opacity 0.5s ease-in-out;
 }
+
 #rocktaves-content {
 	/* justify-content: space-between; */
 	-webkit-transition: opacity 0.5s ease-in-out;
@@ -232,7 +261,9 @@ html, body {
 	display: none;
 	opacity: 0;
 }
-#rapwars-content, #mirage-content {
+
+#rapwars-content,
+#mirage-content {
 	/* justify-content: space-between; */
 	-webkit-transition: opacity 0.5s ease-in-out;
 	-moz-transition: opacity 0.5s ease-in-out;
@@ -241,7 +272,9 @@ html, body {
 	display: none;
 	opacity: 0;
 }
-#purpleprose-content, #standup-content {
+
+#purpleprose-content,
+#standup-content {
 	/* justify-content: space-between; */
 	-webkit-transition: opacity 0.5s ease-in-out;
 	-moz-transition: opacity 0.5s ease-in-out;
@@ -250,15 +283,18 @@ html, body {
 	display: none;
 	opacity: 0;
 }
+
 .head-container {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 }
+
 .oasis-head {
 	justify-content: center;
 	width: 100%;
 }
+
 .oasis-heading {
 	text-align: center;
 	font-family: Motion;
@@ -266,19 +302,22 @@ html, body {
 	font-size: 7em;
 	text-shadow: #9d2331 4px 4px 4px;
 }
+
 .oasis-slogan {
 	text-align: center;
 	margin-top: -2%;
-    color: #fff;
-    font-size: 4em;
+	color: #fff;
+	font-size: 4em;
 	text-shadow: #0ff 3px 3px 3px;
-    padding-left: 30%;
-    display: block;
+	padding-left: 30%;
+	display: block;
 }
+
 .oasis-logo {
 	filter: drop-shadow(7.5px 7.5px 7.5px #9d2331);
 	max-height: 9em;
 }
+
 .event-container {
 	width: 100%;
 	height: 100%;
@@ -288,6 +327,7 @@ html, body {
 	overflow: auto;
 	padding-bottom: 1em;
 }
+
 .event-name {
 	color: #fff;
 	font-size: 5.5em;
@@ -295,35 +335,47 @@ html, body {
 	text-align: center;
 	flex-grow: .34;
 }
+
 .event-body {
 	width: 80%;
 	font-size: 1.2em;
 	text-align: center;
 	letter-spacing: 0.7px;
+	line-height: 1.3em;
 	text-transform: none;
 	font-family: 'Roboto Condensed';
 }
-.event-name, .event-body {
+
+.event-name,
+.event-body {
 	z-index: 10;
 }
+
 .event-logo {
 	max-height: 25vh;
 	max-width: 20vw;
 	border-radius: 50%;
 }
+
 .event-date {
 	font-size: 2em;
 	margin: 5%;
 }
+
 .register-for {
 	-webkit-transition: opacity 0.5s ease-in-out;
 	-moz-transition: opacity 0.5s ease-in-out;
 	-o-transition: opacity 0.5s ease-in-out;
 	transition: opacity 0.5s ease-in-out;
-	text-align: center;	
+	text-align: center;
 }
-#register-content-rocktaves, #register-content-rapwars, #register-content-purpleprose, #register-content-standup, #register-content-mirage  {
-	-webkit-transform:translate3d(0,0,0);
+
+#register-content-rocktaves,
+#register-content-rapwars,
+#register-content-purpleprose,
+#register-content-standup,
+#register-content-mirage {
+	-webkit-transform: translate3d(0, 0, 0);
 	z-index: 999;
 	width: 100%;
 	height: 100%;
@@ -338,8 +390,9 @@ html, body {
 	display: none;
 	opacity: 0;
 	overflow: auto;
-    justify-content: space-between;
+	justify-content: space-between;
 }
+
 .types-of-form {
 	width: 40%;
 	display: flex;
@@ -347,7 +400,8 @@ html, body {
 	margin-bottom: 2%;
 	font-family: BebasNeue;
 }
-.types-of-form > span {
+
+.types-of-form>span {
 	width: 50%;
 	font-size: 1.5em;
 	color: #555555;
@@ -356,65 +410,81 @@ html, body {
 	text-decoration: none;
 	white-space: nowrap;
 }
-.types-of-form > span:nth-of-type(1) {
+
+.types-of-form>span:nth-of-type(1) {
 	border-right: 1px solid #cccccc;
 }
-.types-of-form > span:nth-of-type(2) {
+
+.types-of-form>span:nth-of-type(2) {
 	border-left: 1px solid #cccccc;
 	text-decoration: underline;
 }
+
 .rocktaves-form-note {
 	letter-spacing: 0.5px;
 	color: red;
 	width: 40%;
 	font-family: BebasNeue;
 }
+
 #register-form {
 	width: 40%;
 	text-align: left;
-	
+
 }
+
 .register-for-head {
 	margin-top: 5%;
 	text-align: center;
 	justify-content: center;
 	color: #000;
 }
+
 #myFormRocktavesOnline {
 	/* display: flex;
 	opacity: 0; */
 	display: block;
 	transition: 0.5s;
 }
+
 #myFormRocktavesOffline {
 	transition: 0.5s;
 	display: none;
 }
+
 #register-form input {
 	font-family: BebasNeue;
 	font-size: 1.1em;
 	margin-bottom: 5%;
 }
+
 input[name="college"] {
-display: none;
+	display: none;
 }
+
 input[name="isStudent"] {
-cursor: pointer;
+	cursor: pointer;
 }
-#register-form input[type=text], #register-form input[type=email], #register-form input[type=number] {
+
+#register-form input[type=text],
+#register-form input[type=email],
+#register-form input[type=number] {
 	width: 100%;
 	padding: 5px;
 	border: none;
 	border-bottom: 2px solid #c7c7c7;
 }
+
 #register-form label {
 	font-size: 1.2em;
 	color: #000;
 	font-family: BebasNeue;
 }
+
 .more-entries {
 	margin-bottom: 0 !important;
 }
+
 #register-submit {
 	cursor: pointer;
 	padding: 10px;
@@ -427,6 +497,7 @@ cursor: pointer;
 	margin-bottom: 5%;
 	margin-top: 3%;
 }
+
 #off-register-submit {
 	cursor: pointer;
 	padding: 10px;
@@ -439,14 +510,16 @@ cursor: pointer;
 	margin-bottom: 5%;
 	margin-top: 3%;
 }
+
 select {
-	background: rgba(0,0,0,0);
+	background: rgba(0, 0, 0, 0);
 	border: 0;
 	border-bottom: 2px solid #888888;
 	padding: 2px;
 	color: #888888;
 	margin: 2% 0;
 }
+
 #contact-content {
 	justify-content: center;
 	display: none;
@@ -456,6 +529,7 @@ select {
 	-o-transition: opacity 0.5s ease-in-out;
 	transition: opacity 0.5s ease-in-out;
 }
+
 #register-message-span {
 	color: #000;
 	font-family: BebasNeue;
@@ -467,100 +541,124 @@ select {
 	.oasis-heading {
 		font-size: 6em;
 	}
+
 	.oasis-logo {
 		height: 7em;
 	}
+
 	.oasis-slogan {
 		font-size: 3em;
 	}
-	body,html {
+
+	body,
+	html {
 		background-position: 90% 100%;
 	}
-	#nav-bottom{
+
+	#nav-bottom {
 		overflow: auto;
 		white-space: nowrap;
 		flex-wrap: nowrap;
 	}
 }
+
 @media all and (max-width: 600px) {
 	#container {
 		height: 90vh;
 		width: 85vw;
 	}
+
 	#content {
 		background-position: 70% 0;
 	}
+
 	.top-menu span {
 		font-size: 1em;
 	}
+
 	#nav-bottom span {
 		font-size: 1em;
 	}
+
 	.oasis-heading {
 		font-size: 5em;
 	}
+
 	.oasis-logo {
 		height: 7em;
 	}
+
 	.oasis-slogan {
 		font-size: 3em;
 	}
+
 	#contact-content {
 		justify-content: center;
 	}
+
 	#register-form {
 		width: 70%;
 	}
+
 	.event-body {
 		font-size: .9em;
 	}
+
 	.event-date {
 		font-size: 1.5em;
 	}
+
 	#register-message {
 		width: 80vw;
 		font-size: 1.2em;
 		text-align: center;
 	}
+
 	.types-of-form {
 		width: 80%;
 	}
+
 	.rocktaves-form-note {
 		width: 80%;
 		font-family: BebasNeue;
 	}
-	.types-of-form > span {
+
+	.types-of-form>span {
 		font-size: 1.15em;
 	}
+
 	h1 {
 		font-size: 1.5em;
 	}
 }
+
 @media all and (max-width: 450px) {
 	.oasis-heading {
 		font-size: 5em;
 	}
+
 	.oasis-logo {
 		display: none;
 	}
+
 	.oasis-slogan {
 		margin-top: 0;
-		padding-left: 0; 
+		padding-left: 0;
 		font-size: 3em;
 	}
+
 	.event-name {
 		font-size: 3em;
 		text-align: center;
 	}
 }
-@media all and (max-width: 950px){
+
+@media all and (max-width: 950px) {
 	#register-bottom span {
 		font-size: 0.8em;
 		/* padding: 20px; */
 		overflow: scroll;
 	}
-	#register-bottom {
-		
-	}
-}
 
+	#register-bottom {}
+}
