@@ -22,15 +22,15 @@ checkbox.addEventListener("change", function () {
 		console.log("Checkbox is checked..");
 
 		document.getElementById("register-college-rw").style.display = "block";
-		document.getElementById("register-profession-rw").value = "STUDENT";
-		document.getElementById("register-profession-rw").disabled = true;
+		// document.getElementById("register-profession-rw").value = "STUDENT";
+		// document.getElementById("register-profession-rw").disabled = true;
 
 	} else {
 		console.log("Checkbox is not checked..");
 
 		document.getElementById("register-college-rw").style.display = "none";
-		document.getElementById("register-profession-rw").value = "";
-		document.getElementById("register-profession-rw").disabled = false;
+		// document.getElementById("register-profession-rw").value = "";
+		// document.getElementById("register-profession-rw").disabled = false;
 
 	}
 });
@@ -41,15 +41,15 @@ checkbox.addEventListener("change", function () {
 		console.log("Checkbox is checked..");
 
 		document.getElementById("register-college-pp").style.display = "block";
-		document.getElementById("register-profession-pp").value = "STUDENT";
-		document.getElementById("register-profession-pp").disabled = true;
+		// document.getElementById("register-profession-pp").value = "STUDENT";
+		// document.getElementById("register-profession-pp").disabled = true;
 
 	} else {
 		console.log("Checkbox is not checked..");
 
 		document.getElementById("register-college-pp").style.display = "none";
-		document.getElementById("register-profession-pp").value = "";
-		document.getElementById("register-profession-pp").disabled = false;
+		// document.getElementById("register-profession-pp").value = "";
+		// document.getElementById("register-profession-pp").disabled = false;
 
 	}
 });
