@@ -404,7 +404,7 @@ document.getElementById("myFormRocktavesOffline").onsubmit = function registerFo
 }
 
 document.getElementById("myFormRapwars").onsubmit = function registerForm(f) {
-	name = document.getElementById("register-name-rw").value;
+	participant = document.getElementById("register-name-rw").value;
 	rapname = document.getElementById("register-rapname-rw").value;
 	state = document.getElementById("register-state-rw").value;
 	city = document.getElementById("register-city-rw").value;
@@ -418,7 +418,7 @@ document.getElementById("myFormRapwars").onsubmit = function registerForm(f) {
 	email = document.getElementById("register-email-rw").value;
 	isStudent = document.getElementById("register-isStudent-rw").checked;
 	if (
-		name != "" &&
+		participant != "" &&
 		state != "" &&
 		city != "" &&
 		// organisation != "" &&
@@ -426,7 +426,7 @@ document.getElementById("myFormRapwars").onsubmit = function registerForm(f) {
 		contact != "" &&
 		email != ""
 	) {
-		URL = "https://bits-oasis.org/preregistrations/RapWarsRegistration/";
+		URL = "https://bits-oasis.org/2022/main/preregistrations/RapWarsRegistration/";
 		$.ajax({
 			type: "POST",
 			contentType: "application/json",
@@ -434,14 +434,14 @@ document.getElementById("myFormRapwars").onsubmit = function registerForm(f) {
 			// headers: { 'x-my-custom-header': 'some value' },
 			url: URL,
 			data: JSON.stringify({
-				participant: name,
-				rapper_name: rapname,
+				name: participant,
+				rapname: rapname,
 				state: state,
-				city_of_participation: city,
+				city: city,
 				isStudent: isStudent,
 				linked_org: organisation,
 				college: college,
-				past_perf: previous_performances,
+				previous_performances: previous_performances,
 				insta_handle: socials,
 				phone: contact,
 				email_address: email,
@@ -469,7 +469,7 @@ document.getElementById("myFormRapwars").onsubmit = function registerForm(f) {
 }
 
 document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g) {
-	name = document.getElementById("register-name-pp").value;
+	participant = document.getElementById("register-name-pp").value;
 	language = document.getElementById("register-language-pp").value;
 	state = document.getElementById("register-state-pp").value;
 	city = document.getElementById("register-city-pp").value;
@@ -483,7 +483,7 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
 	email = document.getElementById("register-email-pp").value;
 	isStudent = document.getElementById("register-isStudent-pp").checked;
 	if (
-		name != "" &&
+		participant != "" &&
 		state != "" &&
 		city != "" &&
 		// organisation != "" &&
@@ -491,23 +491,8 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
 		contact != "" &&
 		email != ""
 	) {
-		// URL = "https://bits-oasis.org/pre-registrations/PurpleProseRegistration/";
-		URL = "https://bits-oasis.org/preregistrations/PurpleProseRegistration/";
-		const data ={
-			participant: name,
-				language: language,
-				state: state,
-				city_of_participation: city,
-				// country: country,
-				isStudent: isStudent,
-				linked_org: organisation,
-				college: college,
-				past_perf: previous_performances,
-				phone: contact,
-				email_address: email
-		}
-		console.log(data)
-		``;
+		// URL = "https://bits-oasis.org/main/pre-registrations/PurpleProseRegistration/";
+		URL = "https://bits-oasis.org/2022/main/preregistrations/PurpleProseRegistration/";
 		$.ajax({
 			type: "POST",
 			contentType: "application/json",
@@ -515,7 +500,17 @@ document.getElementById("myFormPurpleprose").onsubmit = function registerForm(g)
 			// headers: headers,
 			url: URL,
 			data: JSON.stringify({
-				data
+				name: participant,
+				language: language,
+				state: state,
+				city: city,
+				// country: country,
+				isStudent: isStudent,
+				linked_org: organisation,
+				college: college,
+				past_perf: previous_performances,
+				phone: contact,
+				email_address: email
 			}),
 			dataType: "json",
 			error: function (xhr, textstatus, err) {
